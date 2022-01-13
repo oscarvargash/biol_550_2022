@@ -12,11 +12,11 @@ These tutorials are hands-on and were designed to be followed on a Linux machine
 
 At the end of the course participants will be comfortable using the bash environment, using phylogentic software, and writing basic python and R scripts.
 
-## Coneecting to HSU virtual labs
+## Coneccting to HSU virtual labs
 
-Every week in lab you will connecto to a Linux virtual machine. There are two ways of connecting to the virtual machine:
+Every week in lab you will connect to a Linux virtual machine. There are two ways of connecting to the virtual machine:
 
-1. log in with HSU credetials into the [vlinux.humboldt.edu](https://vlinux.humboldt.edu/){:target="_blank"} This should work smoothly in your computer station at the lab and possibly in your own laptop.
+1. log in with HSU credetials into the [vlinux.humboldt.edu](https://vlinux.humboldt.edu/) This should work smoothly in your computer station at the lab and possibly in your own laptop.
 
 2. Install NoMachine in your laptop. [Installation instructions](https://its.humboldt.edu/vlinux-home-instructions)
 
