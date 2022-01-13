@@ -1,10 +1,13 @@
 # Week one
 
-## Before class
+## Before start
 
-You should have access to a Unix/Linux environment, running VirtualBox if you have a Windows machine or native in your Mac.
+To start this tutorial you need to be logged in the Linux virtual machine
+[vlinux.humboldt.edu](https://vlinux.humboldt.edu/)
 
 ### Open terminal
+
+Once logged in the Linux machine, look for the Terminal, it is an icon that contains the characters '>\_'
 
 > Add the yellow flag to the right corner of your laptop ![](img/yellow.jpeg)
 
