@@ -54,17 +54,18 @@ SAMtools, sam2consensus, BCFtools, IGV genome viewer
 
 Here is a list of the software associated with the lab. You do not need to install these in your machine unless you really want to. This software has been installed in the virtual Linux machines of HSU.
 
-[BBtools]https://jgi.doe.gov/data-and-tools/bbtools/bb-tools-user-guide/installation-guide/ [FastQC]https://www.bioinformatics.babraham.ac.uk/projects/fastqc/
-[SAMtools]http://www.htslib.org/
-[Integrative Genomics Viewer (IGV)]https://software.broadinstitute.org/software/igv/
-[MAFFT]https://mafft.cbrc.jp/alignment/software/
-[AliView]https://ormbunkar.se/aliview/
-[PAUP]https://paup.phylosolutions.com/get-paup/
-[IQTREE]http://www.iqtree.org/
-[Figtree]http://tree.bio.ed.ac.uk/software/figtree/
-[BEAST]https://github.com/beast-dev/beast-mcmc
-[Tracer]https://github.com/beast-dev/tracer/releases
-[MrBayes]https://nbisweden.github.io/MrBayes/download.html
+[BBtools](https://jgi.doe.gov/data-and-tools/bbtools/bb-tools-user-guide/installation-guide/)
+[FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
+[SAMtools](http://www.htslib.org/)
+[Integrative Genomics Viewer (IGV)](https://software.broadinstitute.org/software/igv/)
+[MAFFT](https://mafft.cbrc.jp/alignment/software/)
+[AliView](https://ormbunkar.se/aliview/)
+[PAUP](https://paup.phylosolutions.com/get-paup/)
+[IQTREE](http://www.iqtree.org/)
+[Figtree](http://tree.bio.ed.ac.uk/software/figtree/)
+[BEAST](https://github.com/beast-dev/beast-mcmc)
+[Tracer](https://github.com/beast-dev/tracer/releases)
+[MrBayes](https://nbisweden.github.io/MrBayes/download.html)
 Linux programs: git, ssh
 Python3 modules: pandas, numpy, sys, os, re, operator, argparse, gzip, math, biopython
 R packages: phytools, maps, ape, ggplot2
