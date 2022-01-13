@@ -16,7 +16,7 @@ At the end of the course participants will be comfortable using the bash environ
 
 Every week in lab you will connecto to a Linux virtual machine. There are two ways of connecting to the virtual machine:
 
-1. log in with HSU credetials into the [vlinux.humboldt.edu](https:vlinux.humboldt.edu). This should work smoothly in your computer station at the lab and possibly in your own laptop.
+1. log in with HSU credetials into the [vlinux.humboldt.edu](https://vlinux.humboldt.edu/) This should work smoothly in your computer station at the lab and possibly in your own laptop.
 
 2. Install NoMachine in your laptop. [Installation instructions](https://its.humboldt.edu/vlinux-home-instructions)
 
