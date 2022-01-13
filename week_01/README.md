@@ -1,5 +1,7 @@
 # Week one
 
+> Add the yellow flag to the right corner of your laptop ![](img/yellow.jpeg)
+
 ## Before start
 
 To start this tutorial you need to be logged in the Linux virtual machine
@@ -9,7 +11,8 @@ To start this tutorial you need to be logged in the Linux virtual machine
 
 Once logged in the Linux machine, look for the Terminal, it is an icon that contains the characters '>\_'
 
-> Add the yellow flag to the right corner of your laptop ![](img/yellow.jpeg)
+![](img/terminal.png)
+
 
 #### macOS users
 
