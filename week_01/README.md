@@ -11,38 +11,15 @@ To start this tutorial you need to be logged in the Linux virtual machine
 
 Once logged in the Linux machine, look for the Terminal, it is an icon that contains the characters '>\_'
 
+You can also write 'terminal' in the search bar of the main manu located in the left bottom of the operating system.
+
 ![](img/terminal.png)
 
+> Note: Macs also have a linux based Terminal. Go to: Applications > Utilities > Terminal.app or you can search in Spotlight: search write `terminal` and press <kbd>Return</kbd>.
 
-#### macOS users
-
-There is an application, and you can access it with:
-- Finder, go to: Applications > Utilities > Terminal.app
-- Spotlight search function, write `terminal` and press <kbd>Return</kbd>.
-
-***TIP:*** You might want to add this application to your dock for easy access.
-
-#### Linux users
-
-There are multiple Linux flavors, hence there might be multiple terminal flavors. Some of them:
- 
-- [(Gnome) Terminal](https://help.gnome.org/users/gnome-terminal/stable/)
-- [(KDE) Konsole](https://konsole.kde.org/)
-- [xterm](https://en.wikipedia.org/wiki/Xterm)
-- [tilix](https://gnunn1.github.io/tilix-web/)
-
-All of them can be found via:
-- the Applications menu (top or bottom left) > Terminal
-- the Applications menu (top or bottom left) > Utilities > Terminal
-- <kbd>Super</kbd> + typing `terminal`.
-
-***TIP:*** You might want to add this application to your dock/favorites for easy access.
+> Note for Windows users: you can install linux in your computer installing a virtual in your computer [installing a virtual machine](https://github.com/merlyescalona/ucsc-eeb-intro2comptools/tree/master/week_00#using-a-virtual-machine) for set up.
 
 > Change your flag to green if you are good to continue ![](img/green.jpeg)
-
-#### Windows users
-
-Go to [Week 00](https://github.com/merlyescalona/ucsc-eeb-intro2comptools/tree/master/week_00) for set up.
 
 ## The Unix shell / terminal / command-line
 
@@ -55,9 +32,6 @@ Using the shell will take some effort and some time to learn. While a graphic us
 The grammar of a shell allows you to combine, in an almost unlimited fashion, existing tools into powerful pipelines and handle large volumes of data automatically. Sequences of commands can be written into a script, improving the reproducibility of workflows.
 
 In addition, the command line is often the easiest way to interact with remote machines and supercomputers. Familiarity with the shell is near essential to run a variety of specialized tools and resources including high-performance computing systems. As clusters and cloud computing systems become more popular for scientific data crunching, being able to interact with the shell is becoming a necessary skill. We can build on the command-line skills covered here to tackle a wide range of scientific questions and computational challenges.
-
-
-***NOTE:*** If your machine is set up to something other than **Bash**, you can run it by openning a terminal and typing `bash`.
 
 ---
 
@@ -76,7 +50,7 @@ pwd
 ```
 now press <kbd>return</kbd>
 
-`pwd` prints a complete path to your working directory. Now that we know our location in the computer. The default location after you have open terminal is your `home` directory 
+`pwd` prints a complete path to your present working directory. Now that we know our location in the computer. The default location after you have open terminal is your `home` directory 
 
 ### Files and directories
 
@@ -169,7 +143,7 @@ cd Documents
 To create a new directory labeled `week_1` type:
 
 ```
-mkdir week_1
+mkdir week_01
 ```
 
 List the items inside your working directory and confirm the folder has been created
@@ -181,7 +155,7 @@ ls
 To Change Directories into the newly created folder type:
 
 ```
-cd week_1
+cd week_01
 ```
 
 you can check that you are really there by checking your Present Working Directory `pwd`
@@ -200,11 +174,11 @@ cd
 ***TIP:*** When the terminal is ready to recibe your command, you can go back earlier commands by simply pressing the up arrow key <kbd>↑</kbd>
 
 
-***TIP:*** To change directories type `cd ` and then **drag and drop** the folder you want to go. This will reduce the ammount of typing if the desired folder you wat to relocate to is too nested in the file hierarchy. let's drag and drop the folder `week_1` in after typing `cd `, then press <kbd>enter</kbd>
+***TIP:*** To change directories type `cd ` and then **drag and drop** the folder you want to go. This will reduce the ammount of typing if the desired folder you wat to relocate to is too nested in the file hierarchy. let's drag and drop the folder `week_01` in after typing `cd `, then press <kbd>enter</kbd>
 
 You can see that the drag and drop method adds the absolute path of the folder instead of the relative path.
 
-You can infer, from the way the command line works, that spaces inside folder and file names can be problematic. For example, let's see what thappens when we try to create a folder "test 1" inside `week_1`
+You can infer, from the way the command line works, that spaces inside folder and file names can be problematic. For example, let's see what thappens when we try to create a folder "test 1" inside `week_01`
 
 ```
 mkdir test 1
@@ -320,13 +294,24 @@ We can list only files that end with ".txt"
 ls *.txt
 ```
 
-List only files that start with "personal":
+How can we list only the files that end with '.r' ?
+
+<details>
+  <summary>Click to see an answer!</summary>
+  
+```
+ls *.r
+```
+
+</details>
+
+Wild cards can also use for the beguining of files and for strings nested in the name of the files. For example we can list only files that start with "personal":
 
 ```
 ls personal*
 ```
 
-List only files that contain the string "002":
+And we can list the files that contain the string "002":
 
 ```
 ls *002*
