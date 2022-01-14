@@ -335,3 +335,24 @@ rm *.txt
 
 > Change your flag to green if you are good to continue ![](img/green.jpeg)
 
+### Using programs
+
+Just as you can explore folders, create, edit, and remove files, programs can be executed in the command line.
+
+We will use FastQC quatify measure the quality of data in a file.
+
+Please dowload in your machine the two files by typing:
+
+```
+cd ~/Documents/Week_01
+
+
+
+
+
+
+
+
+
+
+
