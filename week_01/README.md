@@ -337,6 +337,8 @@ rm *.txt
 
 ### Using programs
 
+> Change your flag to yellow ![](img/yellow.jpeg)
+
 Just as you can explore folders, create, edit, and remove files, programs can be executed in the command line.
 
 We will use FastQC quatify measure the quality of data in a file.
@@ -393,6 +395,8 @@ ls
 You can navigate with the mouse and open the report in html
 
 Congrats!!! you have excuted a program succesfully
+
+> Change your flag to green if you are good to continue ![](img/green.jpeg)
 
 ### Exercise 1
 
