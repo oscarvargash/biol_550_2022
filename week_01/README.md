@@ -294,7 +294,7 @@ We can list only files that end with ".txt"
 ls *.txt
 ```
 
-How can we list only the files that end with '.r' ?
+How can we list only the files that end with ".r" ?
 
 <details>
   <summary>Click to see an answer!</summary>
