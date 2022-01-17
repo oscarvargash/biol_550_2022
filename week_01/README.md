@@ -403,15 +403,3 @@ Congrats!!! you have excuted a program succesfully
 Analyze the second file with FastQC. Upon completion of the analysis compare the results and decide which of the files contains reads with better quality. Submit your answer in CANVAS along with a brief explanation.
 
 
-
-
-
-
-
-
-
-
-
-
-
-

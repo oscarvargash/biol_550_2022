@@ -4,15 +4,15 @@
 > This was developed/organized for a class at Humboldt State University for the spring of 2022. 
 > Some of the material has beed modified from another workshop repository that I co-authored with Merly Escalona at UCSC [Intro to computational tools at UCSC](https://github.com/merlyescalona/ucsc-eeb-intro2comptools) 
 
-The aim of the lab is to provide students the skills necessary to analyse data from next-geneeration sequencing using phylogenetic methods. Studnts will first learn how to use the command line, then will learn how to use an array of phylgentic software, and finally will gain some skills in python and R coding.
+The aim of the lab is to provide the skills necessary to analyze data from next-generation sequencing using phylogenetic methods. Students will first learn how to use the command line, then will learn how to use an array of phylgenetic software, and finally will gain some skills in python and R coding.
 
 These tutorials are hands-on and were designed to be followed on a Linux machine with all the software pre-installed. However, a list of software can be found at the bottom of this page for your reference.
 
 ## What to expect?
 
-At the end of the course participants will be comfortable using the bash environment, using phylogentic software, and writing basic python and R scripts.
+At the end of the course participants will be comfortable using the bash environment, runing phylogentic software, and writing basic python and R scripts.
 
-## Coneccting to HSU virtual labs
+## Conecting to HSU virtual labs
 
 Every week in lab you will connect to a Linux virtual machine. There are two ways of connecting to the virtual machine:
 
@@ -41,7 +41,7 @@ SAMtools, sam2consensus, BCFtools, IGV genome viewer
 
 [W-9] Loops in Python
 
-[W-10] No class
+[W-10] No class (Cesar Chaves holiday)
 
 [W-11] BEAST, chronogram inference + Project dataset submission
 
