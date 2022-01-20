@@ -29,25 +29,25 @@ Every week in lab you will connect to a Linux virtual machine. There are two way
 [W-3] Assemblage of sequences from short reads,
 SAMtools, sam2consensus, BCFtools, IGV genome viewer
 
-[W-4] GenBank, Git, DNA alignment, MAFFT, AliView
+[W-4] Mesquite, PAUP, GIT
 
-[W-5] PAUP, IQTREE, Figtree,
+[W-5] GenBank, DNA alignment, MAFFT, AliView
 
 [W-6] Project proposal presentation and submission
 
-[W-7] Beauti and the BEAST (and dependents -Tracer), MrBayes
+[W-7] IQTREE, Figtree
 
-[W-8] Introduction to Phyton
+[W-8] Beauti and the BEAST (and dependents -Tracer), MrBayes
 
-[W-9] Loops in Python
+[W-9] BEAST, chronogram inference
 
 [W-10] No class (Cesar Chaves holiday)
 
-[W-11] BEAST, chronogram inference + Project dataset submission
+[W-11] Project dataset submission + Introduction to python
 
-[W-12] Tree visualization and manipulation in R
+[W-12] Loops in python
 
-[W-13] Character tracing in R
+[W-13] Tree visualization and manipulation in R, character tracing in R
 
 [W-14] Connecting to a computer cluster ssh
 
@@ -71,6 +71,8 @@ Here is a list of the software associated with the lab. You do not need to insta
 [Integrative Genomics Viewer (IGV)](https://software.broadinstitute.org/software/igv/)
 
 [MAFFT](https://mafft.cbrc.jp/alignment/software/)
+
+[Mesquite](https://www.mesquiteproject.org/Installation.html)
 
 [AliView](https://ormbunkar.se/aliview/)
 
