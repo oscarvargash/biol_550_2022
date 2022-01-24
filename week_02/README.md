@@ -1,13 +1,21 @@
+# Week two
+
+> Add the yellow flag to the right corner of your laptop ![](img/yellow.jpeg)
+
+To start this tutorial you need to be logged in the Linux virtual machine
+[vlinux.humboldt.edu](https://vlinux.humboldt.edu/)
+
+Once logged in the Linux machine, look for the Terminal, it is an icon that contains the characters '>\_'
+
+You can also write 'terminal' in the search bar of the main manu located in the left bottom of the operating system.
+
 ## Using programs
+
+The terminal is a powerful to run programs, as you can analyze tons of data with only a single command. In this tutorial we will run several aplpications in the terminal and will learn the principles of automatizing data processing.
 
 ### Looking at the quality of a file that contains DNA sequences obtanied using high-throughput-sequecing (also known as next-generation-sequencing)
 
 We will use FastQC quatify measure the quality of data in a file.
-
-> Change your flag to yellow ![](img/yellow.jpeg)
-
-Just as you can explore folders, create, edit, and remove files, programs can be executed in the command line.
-
 Please dowload in your machine the two files by typing:
 
 ```

@@ -24,7 +24,7 @@ Every week in lab you will connect to a Linux virtual machine. There are two way
 
 [W-1](https://github.com/oscarvargash/biol_550_2022/tree/main/week_01) Introduction to bash, using FastQC
 
-[W-2] Quality control of raw reads, BBtools, BBduk
+[W-2](https://github.com/oscarvargash/biol_550_2022/tree/main/week_01) Runing programs: quality control of raw reads, BBtools, BBduk
 
 [W-3] Assemblage of sequences from short reads,
 SAMtools, sam2consensus, BCFtools, IGV genome viewer
