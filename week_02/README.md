@@ -323,7 +323,7 @@ ls *02*
 With great power comes great resposability! Files removed through the terminal are gone forever, they **DON'T** go to a trash bin from where they can be reinstated. You can remove a file just by typing:
 
 ```
-rm log_01.txt
+rm personal_log_002.r
 ```
 
 You can remove all the `.txt` files:
