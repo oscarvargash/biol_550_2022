@@ -29,7 +29,20 @@ As you can see, this is a compressed file. We can decompressed by
 
 ```
 unzip reads1.zip
+ls
 ```
+
+We see that there are some extra files there that are probably inherited from compressing these files in a Mac machine. How can we remove these files from our folder? (tio you need to lookat the cheat sheet)
+
+<details>
+  <summary>Click to see an answer!</summary>
+  
+```
+rm -r *MAC*
+```
+
+</details>
+
 
 We can try to get peek in the in the file to see what it is about. Print to the screen the first ten lines of the file by typing using the command `head`:
 
@@ -39,7 +52,7 @@ head Diplostephium_azureum_R1_nrmap.fastq.gz
 
 What did you see?
 
-It turns out that this is also a compressed file. `*.gz` is a common tupe of compression in sequencing. Most bioiformatic programs can work with `*.gz` files, saving space in hard drives. We can look at the file without decompressing it by:
+It turns out that this is also a compressed file. `*.gz` is a common type of compression use in DNA analysis. Most bioinformatic programs can work with `*.gz` files, saving space in hard drives. We can look at the file without decompressing it by:
 
 ```
 zcat Diplostephium_azureum_R1_nrmap.fastq.gz | head
@@ -52,13 +65,13 @@ What is this file?
 We can use FastQC to evaluate the quality of the file. First should figure out how does FastQC works. Most programs have a help menu.
 
 ```
-~/../../opt/FastQC/fastqc -help
+fastqc -help
 ``` 
 
 It seems that we can simply add the name of the file as as the first argument, and we shouls add `-o` (output) to specify where the program should write the report
 
 ```
-~/../../opt/FastQC/fastqc Diplostephium_azureum_R1_nrmap.fastq.gz -o .
+fastqc Diplostephium_azureum_R1_nrmap.fastq.gz -o .
 ``` 
 
 Once it has finish you can list all files and see the output.
