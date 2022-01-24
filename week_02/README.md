@@ -31,7 +31,7 @@ As you can see, this is a compressed file. We can decompressed by
 unzip reads1.zip
 ```
 
-We can try to get peek in the in the file to see what it is about. We caa print to the screen the first ten lines of the file by typing using the command `head`:
+We can try to get peek in the in the file to see what it is about. Print to the screen the first ten lines of the file by typing using the command `head`:
 
 ```
 head Diplostephium_azureum_R1_nrmap.fastq.gz
@@ -39,7 +39,7 @@ head Diplostephium_azureum_R1_nrmap.fastq.gz
 
 What did you see?
 
-It turns out that this is also a compressed file, we can actually look at the file without decompressing it by:
+It turns out that this is also a compressed file. `*.gz` is a common tupe of compression in sequencing. Most bioiformatic programs can work with `*.gz` files, saving space in hard drives. We can look at the file without decompressing it by:
 
 ```
 zcat Diplostephium_azureum_R1_nrmap.fastq.gz | head
@@ -49,7 +49,7 @@ As you can see we are "piping" or passing with `|` the uncompressed text to `hea
 
 What is this file?
 
-We can use FastQC to evaluate the qulity of the file. First should figure out how does FastQC works. Most programs have a help menu.
+We can use FastQC to evaluate the quality of the file. First should figure out how does FastQC works. Most programs have a help menu.
 
 ```
 ~/../../opt/FastQC/fastqc -help
