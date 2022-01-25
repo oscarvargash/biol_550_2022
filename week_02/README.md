@@ -16,7 +16,7 @@ The terminal is a powerful to run programs, as you can analyze tons of data with
 ### Looking at the quality of a file that contains DNA sequences obtanied using high-throughput-sequecing (also known as next-generation-sequencing)
 
 
-Before analysing the quality of the sequences we nned to undertand the basics of [next-generation-sequencing](https://www.youtube.com/watch?v=fCd6B5HRaZ8)
+Before analysing the quality of the sequences we need to undertand the basics of [next-generation-sequencing](https://www.youtube.com/watch?v=fCd6B5HRaZ8)
 
 We will use FastQC quatify measure the quality of data in a file.
 Please download in your machine a compressed file with the data in a folder named `week_02`:
@@ -161,10 +161,4 @@ fastqc S1870_L008_R2_001.ft.fastq.gz -o .
 ```
 
 </details>
-
-
-
-
-
-
 
