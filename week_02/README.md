@@ -15,8 +15,11 @@ The terminal is a powerful to run programs, as you can analyze tons of data with
 
 ### Looking at the quality of a file that contains DNA sequences obtanied using high-throughput-sequecing (also known as next-generation-sequencing)
 
+
+Before analysing the quality of the sequences we nned to undertand the basics of [next-generation-sequencing](https://www.youtube.com/watch?v=fCd6B5HRaZ8)
+
 We will use FastQC quatify measure the quality of data in a file.
-Please dowload in your machine the two files by typing:
+Please download in your machine a compressed file with the data in a folder named `week_02`:
 
 ```
 cd Documents
@@ -32,7 +35,7 @@ unzip reads1.zip
 ls
 ```
 
-WWe can remove now the `.zip` file. How can we remove this files from our folder?
+We can remove now the `.zip` file. How can we remove this files from our folder?
 
 <details>
   <summary>Click to see an answer!</summary>
@@ -68,7 +71,7 @@ We can use FastQC to evaluate the quality of the file. First should figure out h
 fastqc -help
 ``` 
 
-It seems that we can simply add the name of the file as as the first argument, and we shouls add `-o` (output) to specify where the program should write the report
+It seems that we can simply add the name of the file as as the first argument, and we then add `-o` (output) to specify where the program should write the report
 
 ```
 fastqc S1870_L008_R1_001.fastq.gz -o .
@@ -80,23 +83,21 @@ Once it has finish you can list all files and see the output.
 ls
 ```
 
-You can navigate with the mouse and open the report in html
+You can navigate with the mouse and open the html report in a web navigator
 
 Congrats!!! you have excuted a program succesfully
-
-> Change your flag to green if you are good to continue ![](img/green.jpeg)
 
 ### Exercise 1
 
 Analyze the second file with FastQC. Upon completion of the analysis compare the results and decide which of the files contains reads with better quality. Submit your answer in CANVAS along with a brief explanation.
 
+> Change your flag to green if you are good to continue ![](img/green.jpeg)
+
 ### Triming and cleaning reads
 
 > Add the yellow flag to the right corner of your laptop ![](img/yellow.jpeg)
 
-Slide show aboout next-generation sequencing.
-
-We will trim the reads found in the files from contaminants and low quality regions. We sill a suite of programs called bbtools, specifically we will use the program `bbduk.sh`. Let's call the program and see the help:
+We will trim the reads found in the files from contaminants and low quality regions. We will use a suite of programs called `bbtools`, specifically we will use the program `bbduk.sh`. Let's call the program and see the help:
 
 ```
 bbduk.sh -h
@@ -140,10 +141,10 @@ bbduk.sh in=S1870_L008_R1_001.f.fastq.gz ref=~/../../opt/bbmap/resources/adapter
 
 ### Exercise 2
 
-Perform the filtering and trimming in the second file `*R2*` and perform a quality control on the on both final files. Answer the following questions:
+Perform the filtering and trimming in the second file `*R2*`, then excute fastqc on both final files. Answer the following questions:
 
 1. Which file had more contaminants R1 or R2?
-2. Was there a significant difference between the filtered and trimmed file when compared with the non-filtered one? briefly explain
+2. Was there a significant after reads have been both trimmed and filtered when compared with the non-filtered ones? briefly explain
 
 
 <details>
