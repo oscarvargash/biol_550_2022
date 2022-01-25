@@ -32,13 +32,13 @@ unzip reads1.zip
 ls
 ```
 
-We see that there are some extra files there that are probably inherited from compressing these files in a Mac machine. How can we remove these files from our folder? (tio you need to lookat the cheat sheet)
+WWe can remove now the `.zip` file. How can we remove this files from our folder?
 
 <details>
   <summary>Click to see an answer!</summary>
   
 ```
-rm -r *MAC*
+rm *.zip
 ```
 
 </details>
@@ -47,7 +47,7 @@ rm -r *MAC*
 We can try to get peek in the in the file to see what it is about. Print to the screen the first ten lines of the file by typing using the command `head`:
 
 ```
-head Diplostephium_azureum_R1_nrmap.fastq.gz
+head S1870_L008_R1_001.fastq.gz
 ```
 
 What did you see?
@@ -55,7 +55,7 @@ What did you see?
 It turns out that this is also a compressed file. `*.gz` is a common type of compression use in DNA analysis. Most bioinformatic programs can work with `*.gz` files, saving space in hard drives. We can look at the file without decompressing it by:
 
 ```
-zcat Diplostephium_azureum_R1_nrmap.fastq.gz | head
+zcat S1870_L008_R1_001.fastq.gz | head
 ```
 
 As you can see we are "piping" or passing with `|` the uncompressed text to `head`, which prints only the first ten lines of the file
@@ -71,7 +71,7 @@ fastqc -help
 It seems that we can simply add the name of the file as as the first argument, and we shouls add `-o` (output) to specify where the program should write the report
 
 ```
-fastqc Diplostephium_azureum_R1_nrmap.fastq.gz -o .
+fastqc S1870_L008_R1_001.fastq.gz -o .
 ``` 
 
 Once it has finish you can list all files and see the output.
@@ -84,13 +84,13 @@ You can navigate with the mouse and open the report in html
 
 Congrats!!! you have excuted a program succesfully
 
-> Change your flag to green if you are good to continue ![](img/green.jpeg)
-
 ### Exercise 1
 
 Analyze the second file with FastQC. Upon completion of the analysis compare the results and decide which of the files contains reads with better quality. Submit your answer in CANVAS along with a brief explanation.
 
 ### Triming and cleaning reads
+
+> Add the yellow flag to the right corner of your laptop ![](img/yellow.jpeg)
 
 Slide show aboout next-generation sequencing.
 
@@ -106,10 +106,16 @@ It seems that with bbduk.sh `-h` does not work. Let's follow the screen instruct
 bbduk.sh
 ```
 
-We want to trim contamintants found in the reference file 'illumina_primers.fasta' 
+We want to trim contamintants found in the reference file `illumina_primers.fasta`. Let's take a look at the file 
 
 ```
-bbduk.sh in=Diplostephium_azureum_R1_nrmap.fastq.gz ref=~/../../opt/bbmap/resources/adapters.fa ktrim=r k=21 mink=11 hdist=2 ml=50 out=Diplostephium_azureum_R1_nrmap.f.fastq.gz stats=stats1.txt
+cat ~/../../opt/bbmap/resources/adapters.fa
+```
+
+Now run bbduk:
+
+```
+bbduk.sh in=S1870_L008_R1_001.fastq.gz ref=~/../../opt/bbmap/resources/adapters.fa ktrim=r k=21 mink=11 hdist=2 ml=50 out=S1870_L008_R1_001.f.fastq.gz stats=statsf1.txt
 ```
 
 `ktrim` indicates which side of the read should be trimmed
@@ -118,28 +124,42 @@ bbduk.sh in=Diplostephium_azureum_R1_nrmap.fastq.gz ref=~/../../opt/bbmap/resour
 `hdist` indicates the number of mistmatches allowed in the kamer for matching to contaminants
 `ml` is the minimum lenght of a given read
 
+Now that we have removed contaminants we will remove regions of the reads with low quality scores
 
-> Add the yellow flag to the right corner of your laptop ![](img/yellow.jpeg)
+```
+bbduk.sh in=S1870_L008_R1_001.f.fastq.gz ref=~/../../opt/bbmap/resources/adapters.fa qtrim=lr trimq=20 minlength=21 out=S1870_L008_R1_001.ft.fastq.gz stats=statst1.txt
+```
 
+`qtrim` indicates where to trim reads, in this case we are trming on both left and right
+`trimq` indicates the minimum phred score allowed
+`minlength` indicates the minimum lenght of a read allowed
+
+> Change your flag to green if you are good to continue ![](img/green.jpeg)
 
 ### Exercise 2
 
-Perform the filtering of the second file and perform a quality control on the filtered files. Answer the following questions:
+Perform the filtering and trimming in the second file `*R2*` and perform a quality control on the on both final files. Answer the following questions:
 
-1. Which file had more contaminants?
-2. Was there a significant difference between the filtered and non-filtered reports by fastqc
+1. Which file had more contaminants R1 or R2?
+2. Was there a significant difference between the filtered and trimmed file when compared with the non-filtered one? briefly explain
 
 
 <details>
-  <summary>Click here to see the commands to analyze the data of exercise 2, click here only as your last resource</summary>
+  <summary>ONLY AS A LAST RESOURCE, Click here to see the commands to analyze the data of exercise 2</summary>
   
 ```
-bbduk.sh in=Diplostephium_azureum_R2_nrmap.fastq.gz ref=~/../../opt/bbmap/resources/adapters.fa ktrim=r k=21 mink=11 hdist=2 ml=50 out=Diplostephium_azureum_R2_nrmap.f.fastq.gz stats=stats2.txt
-fastqc Diplostephium_azureum_R1_nrmap.f.fastq.gz -o .
-fastqc Diplostephium_azureum_R2_nrmap.f.fastq.gz -o .
+bbduk.sh in=S1870_L008_R2_001.fastq.gz ref=~/../../opt/bbmap/resources/adapters.fa ktrim=r k=21 mink=11 hdist=2 ml=50 out=S1870_L008_R2_001.f.fastq.gz stats=statsf2.txt
+
+bbduk.sh in=S1870_L008_R2_001.f.fastq.gz ref=~/../../opt/bbmap/resources/adapters.fa qtrim=lr trimq=20 minlength=21 out=S1870_L008_R2_001.ft.fastq.gz stats=statst2.txt
+
+
+fastqc S1870_L008_R1_001.ft.fastq.gz -o .
+fastqc S1870_L008_R2_001.ft.fastq.gz -o .
 ```
 
 </details>
+
+
 
 
 
