@@ -90,4 +90,58 @@ Congrats!!! you have excuted a program succesfully
 
 Analyze the second file with FastQC. Upon completion of the analysis compare the results and decide which of the files contains reads with better quality. Submit your answer in CANVAS along with a brief explanation.
 
+### Triming and cleaning reads
+
+Slide show aboout next-generation sequencing.
+
+We will trim the reads found in the files from contaminants and low quality regions. We sill a suite of programs called bbtools, specifically we will use the program `bbduk.sh`. Let's call the program and see the help:
+
+```
+bbduk.sh -h
+```
+
+It seems that with bbduk.sh `-h` does not work. Let's follow the screen instruction and type
+
+```
+bbduk.sh
+```
+
+We want to trim contamintants found in the reference file 'illumina_primers.fasta' 
+
+```
+bbduk.sh in=Diplostephium_azureum_R1_nrmap.fastq.gz ref=~/../../opt/bbmap/resources/adapters.fa ktrim=r k=21 mink=11 hdist=2 ml=50 out=Diplostephium_azureum_R1_nrmap.f.fastq.gz stats=stats1.txt
+```
+
+`ktrim` indicates which side of the read should be trimmed
+`k` indicates the kamer size to look for contaminats, contaminants shorther than K will not be found
+`mink` looks for shorter kmers at the end of reads
+`hdist` indicates the number of mistmatches allowed in the kamer for matching to contaminants
+`ml` is the minimum lenght of a given read
+
+
+> Add the yellow flag to the right corner of your laptop ![](img/yellow.jpeg)
+
+
+### Exercise 2
+
+Perform the filtering of the second file and perform a quality control on the filtered files. Answer the following questions:
+
+1. Which file had more contaminants?
+2. Was there a significant difference between the filtered and non-filtered reports by fastqc
+
+
+<details>
+  <summary>Click here to see the commands to analyze the data of exercise 2, click here only as your last resource</summary>
+  
+```
+bbduk.sh in=Diplostephium_azureum_R2_nrmap.fastq.gz ref=~/../../opt/bbmap/resources/adapters.fa ktrim=r k=21 mink=11 hdist=2 ml=50 out=Diplostephium_azureum_R2_nrmap.f.fastq.gz stats=stats2.txt
+fastqc Diplostephium_azureum_R1_nrmap.f.fastq.gz -o .
+fastqc Diplostephium_azureum_R2_nrmap.f.fastq.gz -o .
+```
+
+</details>
+
+
+
+
 
