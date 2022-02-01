@@ -13,23 +13,83 @@ You can also write 'terminal' in the search bar of the main manu located in the 
 
 Now that we have been able to run programs on data files containing reads, cleaning and trimming these reads. It is time to assemble these reads into actual DNA sequences.
 
-### Mapping reads to a reference
+### Download data
 
 
-First, let's download the data needed for todays exercise.
+First, let's download the data needed for today's exercise.
 
 ```
 cd Documents
 mkdir week_03
 cd week_03
-wget 
-https://github.com/oscarvargash/biol_550_2022/raw/main/week_03/files/reads2.zip
+wget https://github.com/oscarvargash/biol_550_2022/raw/main/week_03/files/reads2.zip
 ```
 
+Let's unzip the data and remove unnecessary files 
+
+```
+unzip reads2.zip
+rm -r *MAC*
+```
+
+> Change your flag to green if you are good to continue ![](img/green.jpeg)
+
+### Download reference
+
+GenBank is a repository of DNA sequences, it contains (in theory) sequences for every single pusblished study that has use DNA.
+
+![](img/gb.png)
+
+> Add the yellow flag to the right corner of your laptop ![](img/yellow.jpeg)
+
+We will download our reference from GenBank. Our data is a subset of genomic reads that correspond the nuclear ribosomal RNA. Inside your virtual linux go to:
+
+[https://www.ncbi.nlm.nih.gov/genbank/](https://www.ncbi.nlm.nih.gov/genbank/)
 
 
+In the search bar type:
+
+```
+Diplostephium haenkei internal transcribed spacer
+```
+
+Click on the first result. This page shows the sequence in GenBank format. A useful format for mapping is the fasta format. To download the seqeuence in fasta format do the following.
+
+1. Click on `send to` at the top right
+2. Select the `file` option
+3. Select the `fasta` format
+4. Click on `create file`
+5. Select `save file`
+6. move the file to `week_03` from `Download`
 
 
+How can move `sequence.fasta` into `week_03` from `Downloads` in the terminal?
+
+<details>
+  <summary>Click to see an answer!</summary>
+  
+In the terminal, if you located in `week_03` you can simply type:
+
+```
+mv ~/Downloads/sequence.fasta .
+```
+
+</details>
+
+> Change your flag to green if you are good to continue ![](img/green.jpeg)
+
+### Performing and vizualizing the mapping
+
+First we need to create a reference
+
+```
+bbmap.sh ref=sequence.fasta
+bbwrap.sh in1=Diplostephium_azureum_R1_nrmap.fastq.gz in2=Diplostephium_azureum_R2_nrmap.fastq.gz outm=D_azur.sam append ref=sequence.fasta nodisk bamscript=bs.sh; sh bs.sh
+```
+
+```
+sam2consensus.py -i D_azur.sam
+```
 
 
 We will use FastQC quatify measure the quality of data in a file.
