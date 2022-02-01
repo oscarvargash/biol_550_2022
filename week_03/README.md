@@ -1,4 +1,4 @@
-# Week two
+# Week three
 
 > Add the yellow flag to the right corner of your laptop ![](img/yellow.jpeg)
 
@@ -9,14 +9,28 @@ Once logged in the Linux machine, look for the Terminal, it is an icon that cont
 
 You can also write 'terminal' in the search bar of the main manu located in the left bottom of the operating system.
 
-## Using programs
+## Mapping reads to a reference
 
-The terminal is a powerful to run programs, as you can analyze tons of data with only a single command. In this tutorial we will run several aplpications in the terminal and will learn the principles of automatizing data processing.
+Now that we have been able to run programs on data files containing reads, cleaning and trimming these reads. It is time to assemble these reads into actual DNA sequences.
 
-### Looking at the quality of a file that contains DNA sequences obtanied using high-throughput-sequecing (also known as next-generation-sequencing)
+### Mapping reads to a reference
 
 
-Before analysing the quality of the sequences we need to undertand the basics of [next-generation-sequencing](https://www.youtube.com/watch?v=fCd6B5HRaZ8)
+First, let's download the data needed for todays exercise.
+
+```
+cd Documents
+mkdir week_03
+cd week_03
+wget 
+https://github.com/oscarvargash/biol_550_2022/raw/main/week_03/files/reads2.zip
+```
+
+
+
+
+
+
 
 We will use FastQC quatify measure the quality of data in a file.
 Please download in your machine a compressed file with the data in a folder named `week_02`:
