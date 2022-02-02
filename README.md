@@ -26,12 +26,12 @@ Every week in lab you will connect to a Linux virtual machine. There are two way
 
 [W-2](https://github.com/oscarvargash/biol_550_2022/tree/main/week_02) Runing programs: quality control of raw reads with fastqc, BBtools, BBduk
 
-[W-3] Assemblage of sequences from short reads,
-SAMtools, sam2consensus, BCFtools, IGV genome viewer
+[W-3](https://github.com/oscarvargash/biol_550_2022/tree/main/week_03) Assemblage of sequences from short reads, genbank, bbmap
+SAMtools, sam2consensus, IGV genome viewer
 
-[W-4] Mesquite, PAUP, GIT
+[W-4] DNA alignment, MAFFT, AliView 
 
-[W-5] GenBank, DNA alignment, MAFFT, AliView
+[W-5] Mesquite, PAUP, GIT 
 
 [W-6] Project proposal presentation and submission
 

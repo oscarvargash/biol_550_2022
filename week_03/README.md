@@ -22,14 +22,13 @@ First, let's download the data needed for today's exercise.
 cd Documents
 mkdir week_03
 cd week_03
-wget https://github.com/oscarvargash/biol_550_2022/raw/main/week_03/files/reads2.zip
+wget https://github.com/oscarvargash/biol_550_2022/raw/main/week_03/files/files_w3.zip
 ```
 
 Let's unzip the data and remove unnecessary files 
 
 ```
-unzip reads2.zip
-rm -r *MAC*
+unzip files_w3.zip
 ```
 
 > Change your flag to green if you are good to continue ![](img/green.jpeg)
@@ -78,161 +77,81 @@ mv ~/Downloads/sequence.fasta .
 
 > Change your flag to green if you are good to continue ![](img/green.jpeg)
 
-### Performing and vizualizing the mapping
-
-First we need to create a reference
-
-```
-bbmap.sh ref=sequence.fasta
-bbwrap.sh in1=Diplostephium_azureum_R1_nrmap.fastq.gz in2=Diplostephium_azureum_R2_nrmap.fastq.gz outm=D_azur.sam append ref=sequence.fasta nodisk bamscript=bs.sh; sh bs.sh
-```
-
-```
-sam2consensus.py -i D_azur.sam
-```
-
-
-We will use FastQC quatify measure the quality of data in a file.
-Please download in your machine a compressed file with the data in a folder named `week_02`:
-
-```
-cd Documents
-mkdir week_02
-cd week_02
-wget https://github.com/oscarvargash/biol_550_2022/raw/main/week_02/files/reads1.zip
-```
-
-As you can see, this is a compressed file. We can decompressed by
-
-```
-unzip reads1.zip
-ls
-```
-
-We can remove now the `.zip` file. How can we remove this files from our folder?
-
-<details>
-  <summary>Click to see an answer!</summary>
-  
-```
-rm *.zip
-```
-
-</details>
-
-
-We can try to get peek in the in the file to see what it is about. Print to the screen the first ten lines of the file by typing using the command `head`:
-
-```
-head S1870_L008_R1_001.fastq.gz
-```
-
-What did you see?
-
-It turns out that this is also a compressed file. `*.gz` is a common type of compression use in DNA analysis. Most bioinformatic programs can work with `*.gz` files, saving space in hard drives. We can look at the file without decompressing it by:
-
-```
-zcat S1870_L008_R1_001.fastq.gz | head
-```
-
-As you can see we are "piping" or passing with `|` the uncompressed text to `head`, which prints only the first ten lines of the file
-
-What is this file?
-
-We can use FastQC to evaluate the quality of the file. First should figure out how does FastQC works. Most programs have a help menu.
-
-```
-fastqc -help
-``` 
-
-It seems that we can simply add the name of the file as as the first argument, and we then add `-o` (output) to specify where the program should write the report
-
-```
-fastqc S1870_L008_R1_001.fastq.gz -o .
-``` 
-
-Once it has finish you can list all files and see the output.
-
-```
-ls
-```
-
-You can navigate with the mouse and open the html report in a web navigator
-
-Congrats!!! you have excuted a program succesfully
-
-### Exercise 1
-
-Analyze the second file with FastQC. Upon completion of the analysis compare the results and decide which of the files contains reads with better quality. Submit your answer in CANVAS along with a brief explanation.
-
-> Change your flag to green if you are good to continue ![](img/green.jpeg)
-
-### Triming and cleaning reads
+### Performing the mapping
 
 > Add the yellow flag to the right corner of your laptop ![](img/yellow.jpeg)
 
-We will trim the reads found in the files from contaminants and low quality regions. We will use a suite of programs called `bbtools`, specifically we will use the program `bbduk.sh`. Let's call the program and see the help:
+
+First we need to create a reference. This steps creates a database for bbmap of the reference.
 
 ```
-bbduk.sh -h
+bbmap.sh ref=sequence.fasta
 ```
 
-It seems that with bbduk.sh `-h` does not work. Let's follow the screen instruction and type
+Now we can do the mapping, note that our imput is the two read files and our output is a `*.sam` file. This command also creates a script than later creates a `*.bam` file which, we will use to vizulize the mapping
 
 ```
-bbduk.sh
+bbwrap.sh in1=Diplostephium_azureum_R1_nrmap.fastq.gz in2=Diplostephium_azureum_R2_nrmap.fastq.gz outm=D_azur.sam append ref=sequence.fasta nodisk bamscript=bs.sh
+
+ls
 ```
 
-We want to trim contamintants found in the reference file `illumina_primers.fasta`. Let's take a look at the file 
+Now let's create the bam file:
 
 ```
-cat ~/../../opt/bbmap/resources/adapters.fa
+sh bs.sh
 ```
 
-Now run bbduk:
+Finally we create the consesus using a python2 script
 
 ```
-bbduk.sh in=S1870_L008_R1_001.fastq.gz ref=~/../../opt/bbmap/resources/adapters.fa ktrim=r k=21 mink=11 hdist=2 ml=50 out=S1870_L008_R1_001.f.fastq.gz stats=statsf1.txt
+python2 sam2consensus.py -i D_azur.sam
+cat 
 ```
-
-`ktrim` indicates which side of the read should be trimmed
-`k` indicates the kamer size to look for contaminats, contaminants shorther than K will not be found
-`mink` looks for shorter kmers at the end of reads
-`hdist` indicates the number of mistmatches allowed in the kamer for matching to contaminants
-`ml` is the minimum lenght of a given read
-
-Now that we have removed contaminants we will remove regions of the reads with low quality scores
-
-```
-bbduk.sh in=S1870_L008_R1_001.f.fastq.gz ref=~/../../opt/bbmap/resources/adapters.fa qtrim=lr trimq=20 minlength=21 out=S1870_L008_R1_001.ft.fastq.gz stats=statst1.txt
-```
-
-`qtrim` indicates where to trim reads, in this case we are trming on both left and right
-`trimq` indicates the minimum phred score allowed
-`minlength` indicates the minimum lenght of a read allowed
 
 > Change your flag to green if you are good to continue ![](img/green.jpeg)
 
-### Exercise 2
 
-Perform the filtering and trimming in the second file `*R2*`, then excute fastqc on both final files. Answer the following questions:
+### Vizualizing the mapping
 
-1. Which file had more contaminants R1 or R2?
-2. Was there a significant difference after reads have been both trimmed and filtered when compared with the non-filtered ones? briefly explain
+> Add the yellow flag to the right corner of your laptop ![](img/yellow.jpeg)
 
 
-<details>
-  <summary>ONLY AS A LAST RESOURCE, Click here to see the commands to analyze the data of exercise 2</summary>
-  
+We can vizualize the mapping by using the Integrative Genomics Viewer. Open the application by:
+
 ```
-bbduk.sh in=S1870_L008_R2_001.fastq.gz ref=~/../../opt/bbmap/resources/adapters.fa ktrim=r k=21 mink=11 hdist=2 ml=50 out=S1870_L008_R2_001.f.fastq.gz stats=statsf2.txt
-
-bbduk.sh in=S1870_L008_R2_001.f.fastq.gz ref=~/../../opt/bbmap/resources/adapters.fa qtrim=lr trimq=20 minlength=21 out=S1870_L008_R2_001.ft.fastq.gz stats=statst2.txt
-
-
-fastqc S1870_L008_R1_001.ft.fastq.gz -o .
-fastqc S1870_L008_R2_001.ft.fastq.gz -o .
+igv.sh
 ```
 
-</details>
+Load the reference sequence:
+
+1. Click on `Genomes`
+2. Click on `Load Genome from File`
+3. Load `sequence.fasta` from your folder in `week_03`
+
+You should be able to see the loaded reference of 9,238 base pairs
+
+![](img/igv1.png)
+
+Load the mapping file `D_azur_sorted.bam`
+
+1. Click on `file`
+2. Click on `Load from File`
+3. Load `D_azur_sorted.bam`
+
+You should be able to see the mapping now
+
+![](img/igv2.png)
+
+> Change your flag to green if you are good to continue ![](img/green.jpeg)
+
+
+### Exercise
+
+Navigate the mapping in IGV and answer the following questions:
+
+1. Do the reads match exactly the reference?
+2. Identify at least two problematic regions, indicate their coordinates (in base pairs) and why you think these are problematic.
+3. (optional) Map the reads the consensus sequences, are those problems solved?
+
 
