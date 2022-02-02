@@ -5,9 +5,9 @@
 To start this tutorial you need to be logged in the Linux virtual machine
 [vlinux.humboldt.edu](https://vlinux.humboldt.edu/)
 
-Once logged in the Linux machine, look for the Terminal, it is an icon that contains the characters '>\_'
+Once logged in the Linux machine, look for the Terminal, it is an icon that contains the characters `>\_`
 
-You can also write 'terminal' in the search bar of the main manu located in the left bottom of the operating system.
+You can also write `terminal` in the search bar of the main manu located in the left bottom of the operating system.
 
 ## Mapping reads to a reference
 
@@ -25,7 +25,7 @@ cd week_03
 wget https://github.com/oscarvargash/biol_550_2022/raw/main/week_03/files/files_w3.zip
 ```
 
-Let's unzip the data and remove unnecessary files 
+Let's unzip the data 
 
 ```
 unzip files_w3.zip
@@ -59,15 +59,15 @@ Click on the first result. This page shows the sequence in GenBank format. A use
 3. Select the `fasta` format
 4. Click on `create file`
 5. Select `save file`
-6. move the file to `week_03` from `Download`
+6. move the file to `week_03` from `Downloads`
 
 
-How can move `sequence.fasta` into `week_03` from `Downloads` in the terminal?
+How can we move `sequence.fasta` into `week_03` from `Downloads` in the terminal?
 
 <details>
   <summary>Click to see an answer!</summary>
   
-In the terminal, if you located in `week_03` you can simply type:
+In the terminal, while located in `week_03` you can type:
 
 ```
 mv ~/Downloads/sequence.fasta .
@@ -82,18 +82,18 @@ mv ~/Downloads/sequence.fasta .
 > Add the yellow flag to the right corner of your laptop ![](img/yellow.jpeg)
 
 
-First we need to create a reference. This steps creates a database for bbmap of the reference.
+First we need to create a reference. This step creates a database for bbmap of the reference.
 
 ```
 bbmap.sh ref=sequence.fasta
 ```
 
-Now we can do the mapping, note that our imput is the two read files and our output is a `*.sam` file. This command also creates a script than later creates a `*.bam` file which, we will use to vizulize the mapping
+Now we can do the mapping, note that our input is the two read files and our output is a `*.sam` file. This command also creates a script than later creates a `*.bam` file which, we will use to vizulize the mapping
 
 ```
 bbwrap.sh in1=Diplostephium_azureum_R1_nrmap.fastq.gz in2=Diplostephium_azureum_R2_nrmap.fastq.gz outm=D_azur.sam append ref=sequence.fasta nodisk bamscript=bs.sh
 
-ls
+ls 
 ```
 
 Now let's create the bam file:
@@ -106,7 +106,7 @@ Finally we create the consesus using a python2 script
 
 ```
 python2 sam2consensus.py -i D_azur.sam
-cat 
+cat KX063971.1__D_azur.fasta
 ```
 
 > Change your flag to green if you are good to continue ![](img/green.jpeg)
@@ -152,6 +152,5 @@ Navigate the mapping in IGV and answer the following questions:
 
 1. Do the reads match exactly the reference?
 2. Identify at least two problematic regions, indicate their coordinates (in base pairs) and why you think these are problematic.
-3. (optional) Map the reads the consensus sequences, are those problems solved?
-
+3. (optional) Map the reads to the consensus sequence `KX063971.1__D_azur.fasta`, are those problems solved?
 
