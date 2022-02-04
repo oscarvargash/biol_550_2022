@@ -26,10 +26,9 @@ Every week in lab you will connect to a Linux virtual machine. There are two way
 
 [W-2](https://github.com/oscarvargash/biol_550_2022/tree/main/week_02) Runing programs: quality control of raw reads with fastqc, BBtools, BBduk
 
-[W-3](https://github.com/oscarvargash/biol_550_2022/tree/main/week_03) Assemblage of sequences from short reads, genbank, bbmap
-SAMtools, sam2consensus, IGV genome viewer
+[W-3](https://github.com/oscarvargash/biol_550_2022/tree/main/week_03) Assemblage of sequences from short reads, genbank, bbmap, SAMtools, sam2consensus, IGV genome viewer
 
-[W-4] DNA alignment, MAFFT, AliView 
+[W-4] DNA alignment, MAFFT, AliView, bash loops
 
 [W-5] Mesquite, PAUP, GIT 
 
@@ -68,9 +67,13 @@ Here is a list of the software associated with the lab. You do not need to insta
 
 [SAMtools](http://www.htslib.org/)
 
+[sam2consensus](https://github.com/edgardomortiz/sam2consensus)
+
 [Integrative Genomics Viewer (IGV)](https://software.broadinstitute.org/software/igv/)
 
 [MAFFT](https://mafft.cbrc.jp/alignment/software/)
+
+[TrimAl](http://trimal.cgenomics.org/)
 
 [Mesquite](https://www.mesquiteproject.org/Installation.html)
 
