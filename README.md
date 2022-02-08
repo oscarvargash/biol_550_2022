@@ -28,7 +28,7 @@ Every week in lab you will connect to a Linux virtual machine. There are two way
 
 [W-3](https://github.com/oscarvargash/biol_550_2022/tree/main/week_03) Assemblage of sequences from short reads, genbank, bbmap, SAMtools, sam2consensus, IGV genome viewer
 
-[W-4] DNA alignment, MAFFT, AliView, bash loops
+[W-4](https://github.com/oscarvargash/biol_550_2022/tree/main/week_03) DNA alignment, MAFFT, AliView, bash loops
 
 [W-5] Mesquite, PAUP, GIT 
 

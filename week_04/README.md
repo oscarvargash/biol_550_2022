@@ -9,6 +9,20 @@ Once logged in the Linux machine, look for the Terminal, it is an icon that cont
 
 You can also write `terminal` in the search bar of the main manu located in the left bottom of the operating system.
 
+## Cancel a running process
+
+Sometimes an unwanted process happens in our terminal, perhaps we `cat` a really long file or we just insert a typo in the command line. We can simulate an unwanted process by just typing:
+
+```
+cat
+```
+
+You might think that the terminal is stuck, that we might have missed and argument for `cat`, but `cat`  is operating nevertheless. We can easily cancel the process by typing:
+
+<kbd>control</kbd> + <kbd>c</kbd>
+
+The process is canceled and the terminal is ready to receive a command.
+
 ## Aligning DNA matrices
 
 Now that we have been able assemble a DNA regions we can aling those using aligning tools. There are many tools out there to perform aligments, today we will we use mafft.
@@ -75,147 +89,67 @@ Congratulations, you have created your first alignment!
 
 ### Loops in bash
 
-We can perform iterative actions in bash eaasily. An interative action is an action that is perfomed in multiple items. For example we can align 10 files with mafft using a single line of code. 
+> Add the yellow flag to the right corner of your screen ![](img/yellow.jpeg)
 
-Download the data
+We can perform iterative actions in bash easily. An interative action is an action that is perfomed in multiple items. For example we can align 10 files with mafft using a single line of code. 
+
+Download the data and unzip it
 
 ```
-wget
+wget https://github.com/oscarvargash/biol_550_2022/raw/main/week_04/files/files_4.zip
+unzip files_4.zip
 ```
+
+We see numerous aligments, we can aling all the files using a loop:
+
+First we should try a simple loop that will call the files we want, this is only for testiing purposes:
+
+```
+for file in *g.fasta; do echo $file; done
+```
+
+In the code above `file` takes the value of evey item called by `*g.fasta`  in the first set of instructions that end on `;`. The following part of the code performs the action on the item `file`; in this case `echo` simply prints every item. We see that the `file` takes the value of the name of the file.
+
+We can now write a loop that uses mafft to align every item. 
+
+```
+for file in *g.fasta; do mafft $file > $file.al; done
+```
+
+Beautifully powerful, don't you think?
+
+> Change your flag to green if you are good to continue ![](img/green.jpeg)
+
+### Trimming alignments 
 
 > Add the yellow flag to the right corner of your screen ![](img/yellow.jpeg)
 
-
-
-
-
-
-Let's unzip the data 
+Let's look at the first aligment:
 
 ```
-unzip files_w3.zip
+aliview cluster1098_supercontig.fasta.al
 ```
+
+How does it look?
+
+We can get rid of problematic sections by using a trimmer.
+
+For a single file we can use:
+
+```
+trimal -in cluster1098_supercontig.fasta.al -out cluster1098_supercontig.fasta.al.trm -automated1
+
+aliview cluster1098_supercontig.fasta.al.trm 
+```
+
+How does it look now?
+
 
 > Change your flag to green if you are good to continue ![](img/green.jpeg)
-
-### Download reference
-
-GenBank is a repository of DNA sequences, it contains (in theory) sequences for every single pusblished study that has use DNA.
-
-![](img/gb.png)
-
-> Add the yellow flag to the right corner of your screen ![](img/yellow.jpeg)
-
-We will download our reference from GenBank. Our data is a subset of genomic reads that correspond the nuclear ribosomal RNA. Inside your virtual linux go to:
-
-[https://www.ncbi.nlm.nih.gov/genbank/](https://www.ncbi.nlm.nih.gov/genbank/)
-
-
-In the search bar type:
-
-```
-Diplostephium internal transcribed spacer
-```
-
-Click on the first result. This page shows the sequence in GenBank format. A useful format for mapping is the fasta format. To download the seqeuence in fasta format do the following.
-
-1. Click on `send to` at the top right
-2. Select the `file` option
-3. Select the `fasta` format
-4. Click on `create file`
-5. Select `save file`
-6. move the file to `week_03` from `Downloads`
-
-
-How can we move `sequence.fasta` into `week_03` from `Downloads` in the terminal?
-
-<details>
-  <summary>Click to see an answer!</summary>
-  
-In the terminal, while located in `week_03` you can type:
-
-```
-mv ~/Downloads/sequence.fasta .
-```
-
-</details>
-
-> Change your flag to green if you are good to continue ![](img/green.jpeg)
-
-### Performing the mapping
-
-> Add the yellow flag to the right corner of your laptop ![](img/yellow.jpeg)
-
-
-First we need to create a reference. This step creates a database for bbmap of the reference.
-
-```
-bbmap.sh ref=sequence.fasta
-```
-
-Now we can do the mapping, note that our input is the two read files and our output is a `*.sam` file. This command also creates a script than later creates a `*.bam` file which, we will use to vizulize the mapping
-
-```
-bbwrap.sh in1=Diplostephium_azureum_R1_nrmap.fastq.gz in2=Diplostephium_azureum_R2_nrmap.fastq.gz outm=D_azur.sam append ref=sequence.fasta nodisk bamscript=bs.sh
-
-ls 
-```
-
-Now let's create the bam file:
-
-```
-sh bs.sh
-```
-
-Finally we create the consesus using a python2 script
-
-```
-python2 sam2consensus.py -i D_azur.sam
-cat KX063971.1__D_azur.fasta
-```
-
-> Change your flag to green if you are good to continue ![](img/green.jpeg)
-
-
-### Vizualizing the mapping
-
-> Add the yellow flag to the right corner of your laptop ![](img/yellow.jpeg)
-
-
-We can vizualize the mapping by using the Integrative Genomics Viewer. Open the application by:
-
-```
-igv.sh
-```
-
-Load the reference sequence:
-
-1. Click on `Genomes`
-2. Click on `Load Genome from File`
-3. Load `sequence.fasta` from your folder in `week_03`
-
-You should be able to see the loaded reference of 9,238 base pairs
-
-![](img/igv1.png)
-
-Load the mapping file `D_azur_sorted.bam`
-
-1. Click on `file`
-2. Click on `Load from File`
-3. Load `D_azur_sorted.bam`
-
-You should be able to see the mapping now
-
-![](img/igv2.png)
-
-> Change your flag to green if you are good to continue ![](img/green.jpeg)
-
 
 ### Exercise
 
-Navigate the mapping in IGV and answer the following questions:
+1. Write a bash loop for triming all alignments from problematic regions.
+2. Find the help menu in of `TrimAl` and based on examples 6 and 7 at the end of the menu, asnwer the follwoing question: what other actions can `TrimAl` perform to matrices?
 
-1. Do the reads match exactly the reference?
-2. Identify at least two problematic regions, indicate their coordinates (in base pairs) and why you think these are problematic.
-3. (optional) Map the reads to the consensus sequence `KX063971.1__D_azur.fasta`, are those problems solved?
 
