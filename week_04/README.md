@@ -53,7 +53,7 @@ cat sequence.fasta
 
 > Add the yellow flag to the right corner of your screen ![](img/yellow.jpeg)
 
-We can vizlualize the fasta file that we downloaded with `aliview`
+We can vizualize the fasta file that we downloaded with `aliview`
 
 ```
 aliview sequence.fasta 
@@ -69,14 +69,19 @@ Because we have only have 10 sequences, we will use a computational expensive al
 mafft --maxiterate 1000 --localpair sequence.fasta > sequence.al.fasta 
 aliview sequence.al.fasta
 ```
-
 Congratulations, you have created your first alignment!
 
 > Change your flag to green if you are good to continue ![](img/green.jpeg)
 
+### Loops in bash
 
+We can perform iterative actions in bash eaasily. An interative action is an action that is perfomed in multiple items. For example we can align 10 files with mafft using a single line of code. 
 
+Download the data
 
+```
+wget
+```
 
 > Add the yellow flag to the right corner of your screen ![](img/yellow.jpeg)
 
