@@ -149,7 +149,7 @@ How does it look now?
 
 ### Exercise
 
-1. Write a bash loop for triming all alignments from problematic regions.
-2. Find the help menu in of `TrimAl` and based on examples 6 and 7 at the end of the menu, asnwer the follwoing question: what other actions can `TrimAl` perform to matrices?
+1. Write a bash loop that trims all alignments from problematic regions.
+2. Find the help menu of `TrimAl` and based on examples 6 and 7 at the end of the menu, answer the following question: what other actions can `TrimAl` perform to matrices?
 
 
