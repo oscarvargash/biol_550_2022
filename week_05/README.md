@@ -1,4 +1,4 @@
-# Week five: building trees using PAUP, character tracing using Mesquite, git
+# Week five: building trees using PAUP, git
 
 > Add the yellow flag to the right corner of your screen ![](img/yellow.jpeg)
 
@@ -25,7 +25,125 @@ Download data from this lab:
 wget https://github.com/oscarvargash/biol_550_2022/raw/main/week_05/files/supermatrix.fasta
 ```
 
-[https://www.ncbi.nlm.nih.gov/genbank/](https://www.ncbi.nlm.nih.gov/genbank/)
+### Exporting the data as a nexus file
+
+So far we have only been working with `*.fasta` files; PAUP, however, does not read fasta files, and instead uses nexus files. We can use aliview to export our matrix to `*.nexus`
+
+```
+aliview supermatrix.fasta
+```
+
+Then do the following:
+1. Click on `file`
+2. Click on `save as nexus`
+3. Keep the suggested name and `save`
+4. Close aliview
+
+
+How do we know the format has changed?
+
+<details>
+  <summary>Click to see an answer!</summary>
+
+```
+head supermatrix.nexus
+```
+
+</details>
+
+
+### Using PAUP
+
+Paup can be used as an interactive program or you can write all your commands at the end of a nexus file to perform analysis. Today we will use interactively using one command at a time. To open PAUP simply type:
+
+```
+paup4a168_ubuntu64
+```
+
+You can see that the command line has change and now says `puap>`. You are now inside the PAUP program, and PAUP is waiting for instructions.
+
+Let's see what are our command options:
+
+```
+?
+```
+
+In PAUP, we first need to open our data matrix:
+
+```
+execute supermatrix.nexus
+```
+
+You should see a summary of the about the taxa imported.
+
+In order to better make sense of trees produced, we will set the outgroup:
+
+```
+outgroup Typha_latifolia
+```
+
+Do a parsimony search:
+
+```
+hsearch
+```
+
+When asked about increasing the number of maximum trees, type `y` and the type option `2` to avoid this question in the future. At the end of the search you should see a summary of all the trees found.
+
+We can see a single tree by typing
+
+```
+ShowTrees
+```
+
+Beacause we have more than a 100 trees, a good strategy is to summarize our results into a concensus tree.
+
+```
+contree
+```
+
+You will realize that the consesus tree has some polytomies, these polytomies indicate inconsistensis of multiple trees that contain the same lenght.
+
+Let's save the tree
+
+```
+contree / treefile = par_con.tre
+```
+
+Congrats, you have performed your first phylogenetic analysis!!!!!
+
+Let's quit paup
+
+```
+quit
+```
+
+A better way to vizualize trees is to use figtree
+
+```
+~/../../opt/FigTree_v1.4.4/bin par_con.tre
+```
+
+Figtree will become your best friend.
+
+
+> Change your flag to green if you are good to continue ![](img/green.jpeg)
+
+
+### GIT
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
