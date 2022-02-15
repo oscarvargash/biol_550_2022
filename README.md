@@ -30,7 +30,7 @@ Every week in lab you will connect to a Linux virtual machine. There are two way
 
 [W-4](https://github.com/oscarvargash/biol_550_2022/tree/main/week_04) DNA alignment, MAFFT, AliView, bash loops
 
-[W-5] Mesquite, PAUP, GIT 
+[W-5](https://github.com/oscarvargash/biol_550_2022/tree/main/week_05) Mesquite, PAUP, GIT 
 
 [W-6] Project proposal presentation and submission
 
