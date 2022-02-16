@@ -191,6 +191,6 @@ To make your repository accesible to Oscar, you need to:
 
 ### Exercise
 
-Infer, save, and compare a NeighborJoining `nj` tree against a `upgma` tree. Are these tree different?
+Infer, save, and compare a NeighborJoining `nj` tree against a `upgma` tree. Are these trees different?
 
 Type your answer in the canvas exercise for this lab.
