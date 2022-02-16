@@ -51,10 +51,13 @@ head supermatrix.nexus
 
 </details>
 
+> Change your flag to green if you are good to continue ![](img/green.jpeg)
 
 ### Using PAUP
 
 Paup can be used as an interactive program or you can write all your commands at the end of a nexus file to perform analysis. Today we will use interactively using one command at a time. To open PAUP simply type:
+
+> Add the yellow flag to the right corner of your screen ![](img/yellow.jpeg)
 
 ```
 paup4a168_ubuntu64
@@ -140,6 +143,8 @@ Github and Bitbuckect are web interfaces of `git`, In the last years code-specif
 
 # Creating a GitHub account
 
+> Add the yellow flag to the right corner of your screen ![](img/yellow.jpeg)
+
 Go to https://github.com/ and sign up / create account / register.
 
 ***NOTE:*** For Github Education (later) go [here](https://education.github.com/discount_requests/new)
@@ -147,6 +152,8 @@ Go to https://github.com/ and sign up / create account / register.
 > Change your flag to green if you are good to continue ![](img/green.jpeg)
 
 # Creating a repository
+
+> Add the yellow flag to the right corner of your screen ![](img/yellow.jpeg)
 
 On your github homepage:
 
@@ -179,6 +186,8 @@ To make your repository accesible to Oscar, you need to:
 1. Click on `settings`
 2. Click on `colaborators`
 3. Add `oscarvargash` as a collaborator
+
+> Change your flag to green if you are good to continue ![](img/green.jpeg)
 
 ### Exercise
 
