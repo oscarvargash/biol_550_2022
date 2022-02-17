@@ -180,7 +180,7 @@ You can now more about the sytax of markdown github [here](https://docs.github.c
 
 You can also check the raw text for the tutorials of this class.
 
-For simplicity you will be using the on-line github platform. It is, however, possible to link github with local files; this is out of the scope for this class, but you can know more about [here]()
+For simplicity you will be using the on-line github platform. It is, however, possible to link github with local files; this is out of the scope for this class, but you can know more about [here](https://github.com/merlyescalona/ucsc-eeb-intro2comptools/tree/master/week_03)
 
 To make your repository accesible to Oscar, you need to:
 1. Click on `settings`
