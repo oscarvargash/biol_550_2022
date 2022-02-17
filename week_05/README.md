@@ -124,7 +124,7 @@ quit
 A better way to vizualize trees is to use figtree
 
 ```
-~/../../opt/FigTree_v1.4.4/bin/figtree par_con.tre
+figtree par_con.tre
 ```
 
 Figtree will become your best friend.
