@@ -191,6 +191,9 @@ To make your repository accesible to Oscar, you need to:
 
 ### Exercise
 
-Infer, save, and compare a NeighborJoining `nj` tree against a `upgma` tree. Are these trees different?
+Use PAUP and the same data downloaded earlier in this tutorial.
+
+Infer, save, and compare a NeighborJoining `nj` tree against a `upgma` tree. You will need to save every tree after every analysis using `SaveTrees`. 
+Are these trees different?
 
 Type your answer in the canvas exercise for this lab.
