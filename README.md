@@ -34,7 +34,7 @@ Every week in lab you will connect to a Linux virtual machine. There are two way
 
 [W-6] Project proposal presentation and submission
 
-[W-7] IQTREE, more loops, MrBayes
+[W-7](https://github.com/oscarvargash/biol_550_2022/tree/main/week_07) IQTREE, more loops, MrBayes
 
 [W-8] Beauti and the BEAST (and dependents -Tracer)
 
