@@ -34,21 +34,21 @@ Every week in lab you will connect to a Linux virtual machine. There are two way
 
 [W-6] Project proposal presentation and submission
 
-[W-7](https://github.com/oscarvargash/biol_550_2022/tree/main/week_07) IQTREE, more loops, MrBayes
+[W-7](https://github.com/oscarvargash/biol_550_2022/tree/main/week_07) IQTREE, concatenation, more loops, 
 
-[W-8] Beauti and the BEAST (and dependents -Tracer)
+[W-8] MrBayes, tracer
 
-[W-9] BEAST, chronogram inference
+[W-9] BeauTi and the BEAST, chronogram inference
 
 [W-10] No class (Cesar Chaves holiday)
 
-[W-11] Project dataset submission, Introduction to python
+[W-11] Project dataset submission, Tree visualization and manipulation in R, character tracing in R
 
-[W-12] Loops in python
+[W-12] Introduction to python
 
-[W-13] Tree visualization and manipulation in R, character tracing in R
+[W-13] Loops in python
 
-[W-14] Connecting to a computer cluster ssh
+[W-14] Phylo-hub
 
 [W-15] Final project presentations
 
@@ -93,7 +93,7 @@ Here is a list of the software associated with the lab. You do not need to insta
 
 Linux programs: git, ssh
 
-Python3 modules: pandas, numpy, sys, os, re, operator, argparse, gzip, math, biopython
+Python3 modules: biopython, collections, glob, pandas, numpy, sys, os, re, operator, argparse, gzip, math
 
 R packages: phytools, maps, ape, ggplot2
 
