@@ -46,7 +46,7 @@ Now we can do the test for a single gene
 iqtree -s ccsA-ndhD.fasta -m MF
 ```
 
-In the output we can see that `iqtree` perform multiple tests in all the possible models. The (iqtree website)[http://www.iqtree.org/doc/] contains useful information for interpreting outputs.
+In the output we can see that `iqtree` perform multiple tests in all the possible models. The [iqtree website](http://www.iqtree.org/doc/) contains useful information for interpreting outputs.
 
 > Change your flag to green if you are good to continue ![](img/green.jpeg)
 
@@ -97,7 +97,7 @@ Explore the trees obtanined, do they represent the same relationships?
 
 All the DNA regions in this exercise belong to the chloroplast genome. Because this region is a single and large piece of DNA that does not perform recombination it is safe to assume that a single tree underlies the history of all the chloroplast. IN case like shits one it is best to concatenate all genes in a supermatrix that contains all the phylogenetic signal in a single analysis.
 
-first we need to create a supermatrix using a python3 script that concatenates all the files and creates a partition model. Alternatively you can use (Mesquite)[https://www.mesquiteproject.org/Managing%20Molecular%20Data.html#concatMatrices] a program with a graphic interface to perform the concatenation(the use of Mesquite is only advisable when the number of aligments is 5 or less)
+first we need to create a supermatrix using a python3 script that concatenates all the files and creates a partition model. Alternatively you can use [Mesquite](https://www.mesquiteproject.org/Managing%20Molecular%20Data.html#concatMatrices) a program with a graphic interface to perform the concatenation(the use of Mesquite is only advisable when the number of aligments is 5 or less)
 
 ```
 python3 concatenate_all_fasta.py
