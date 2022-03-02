@@ -81,7 +81,7 @@ We can go one step further and print the commands we want to utilize:
 for file in *.fasta; do echo iqtree -m GTR+G -bb 1000 -s $file; done
 ```
 
-This looks pretty good, now write the loop in a way it will analyze every single alignment:
+This looks pretty good, now write the loop in a way that it will analyze every single alignment:
 
 ```
 for file in *.fasta; do iqtree -m GTR+G -bb 1000 -s $file; done
@@ -95,7 +95,7 @@ Explore the trees obtanined, do they represent the same relationships?
 
 > Add the yellow flag to the right corner of your screen ![](img/yellow.jpeg)
 
-All the DNA regions in this exercise belong to the chloroplast genome. Because this region is a single and large piece of DNA that does not perform recombination it is safe to assume that a single tree underlies the history of all the chloroplast. IN case like shits one it is best to concatenate all genes in a supermatrix that contains all the phylogenetic signal in a single analysis.
+All the DNA regions in this exercise belong to the chloroplast genome. Because this region is a single and large piece of DNA that does not perform recombination, it is safe to assume that a single tree underlies the history of all the chloroplast. In cases like this one it is best to concatenate all genes in a supermatrix that contains all the phylogenetic signal in a single analysis.
 
 first we need to create a supermatrix using a python3 script that concatenates all the files and creates a partition model. Alternatively you can use [Mesquite](https://www.mesquiteproject.org/Managing%20Molecular%20Data.html#concatMatrices) a program with a graphic interface to perform the concatenation(the use of Mesquite is only advisable when the number of aligments is 5 or less)
 
