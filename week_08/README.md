@@ -118,3 +118,21 @@ iqtree -m GTR+G -bb 1000 -s supermatrix.fasta -spp supermatrix.model
 
 > Change your flag to green if you are good to continue ![](img/green.jpeg)
 
+### Exercise
+
+Create a loop that that prints the first line for every DNA alignment in today's folder. The output of the printing should look like this:
+
+```
+>Barringtonia_edulis
+>Barringtonia_edulis
+>Barringtonia_edulis
+>Barringtonia_edulis
+>Barringtonia_edulis
+>Barringtonia_edulis
+>Barringtonia_edulis
+>Barringtonia_edulis
+>Barringtonia_edulis
+>Barringtonia_edulis
+```
+
+Submit your answer in CANVAS
