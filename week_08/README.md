@@ -26,8 +26,6 @@ wget https://github.com/oscarvargash/biol_550_2022/raw/main/week_08/files/files.
 unzip files.zip
 ```
 
-> Change your flag to green if you are good to continue ![](img/green.jpeg)
-
 ### Preparing the file for MrBayes
 
 Mr.Bayes only works with `nexus` files. Therefore, we need to comvert our `fasta` file into a a `nexus` one. We have done this before with `Aliview`:
@@ -85,7 +83,7 @@ end;
 mb -i cp_2_genes.nexus
 ```
 
-This will take some minutes, lets keep the program running while we talk about all the parameters used in this analysis
+This will take some minutes, lets keep the program running while we talk about all the parameters used in this analysis. Once the analysis has finished type `quit` to exit MrBayes
 
 > Change your flag to green if you are good to continue ![](img/green.jpeg)
 
@@ -137,6 +135,8 @@ Do a Maximum Likelihood analysis of `cp_2_genes.nexus`, make sure every gene has
 
 3. In terms of support. Do both trees present similar support values? Give specific examples to support your answer and remember that roughly 70% bootstrap corerspond to 0.95 posterior probability.
 
+Submit your answers to CANVAS
+
 ## 2
 
 Create a loop that that prints the first line for every DNA alignment in used in week's 7 exercise (iqtree tutorial). The output of the printing should look like this:
@@ -154,4 +154,4 @@ Create a loop that that prints the first line for every DNA alignment in used in
 >Barringtonia_edulis
 ```
 
-Submit your answers to CANVAS
+Submit your loop to CANVAS

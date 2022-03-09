@@ -36,7 +36,7 @@ Every week in lab you will connect to a Linux virtual machine. There are two way
 
 [W-7](https://github.com/oscarvargash/biol_550_2022/tree/main/week_07) IQTREE, concatenation, more loops, 
 
-[W-8] MrBayes, tracer
+[W-8](https://github.com/oscarvargash/biol_550_2022/tree/main/week_08) MrBayes, tracer
 
 [W-9] BeauTi and the BEAST, chronogram inference
 
