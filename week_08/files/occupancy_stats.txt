@@ -1,0 +1,2 @@
+cell occupancy = 0.998977711872023
+region occupancy = 1.0

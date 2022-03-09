@@ -15,20 +15,89 @@ Make a folder for this week:
 
 ```
 cd Documents
-mkdir week_07
-cd week_07
+mkdir week_08
+cd week_08
 ```
 
 Download and unzip data from this lab:
 
 ```
-wget https://github.com/oscarvargash/biol_550_2022/raw/main/week_07/files/files.zip
+wget https://github.com/oscarvargash/biol_550_2022/raw/main/week_08/files/files.zip
 unzip files.zip
 ```
 
 > Change your flag to green if you are good to continue ![](img/green.jpeg)
 
-### Testing models of evolution in the alignments
+### Preparing the file for MrBayes
+
+Mr.Bayes only works with `nexus` files. Therefore, we need to comvert our `fasta` file into a a `nexus` one. We have done this before with `Aliview`:
+
+```
+aliview cp_2_genes.fasta
+cat cp_2_genes.model
+```
+
+In `aliview`:
+
+1. click on the `file` menu
+2. `save as` nexus (for Mr. bayes, second nexus option)
+3. `save`
+
+MrBayes operates like PAUP, it is a command line program that can operate interactively or with a script. We will use a script today. In order to do so, we need to add the commands for our analysis to the end of our fasta file:
+
+```
+xdg-open cp_2_genes.nexus
+xdg-open cp_2_genes.model
+```
+
+Once the file is open, paste the following text at the bottom of the `nexus` file after removing the block for codons
+
+```
+begin mrbayes;
+
+    [This block defines several different character sets that could be used in partitioning these data
+    and then defines and enforces a partition called favored.]
+
+    charset ccsA-ndhD = 1-1263;
+    charset ycf1and2 = 1264-3709;
+
+    partition favored = 2: ccsA-ndhD, ycf1and2;
+
+    set partition=favored;
+    lset app=(1,2) rates=gamma nst=6;
+    unlink revmat=(all) shape=(all) statefreq=(all);
+    prset applyto=(all) ratepr=variable;
+    
+    mcmc ngen=1000000 printfreq=1000 samplefreq=1000 relburnin=yes burninfrac=0.25							
+	diagnfreq=1000 diagnstat=maxstddev											
+	nchains=4 savebrlens=yes 
+	filename=cp_2_genes;
+	sump;
+	sumt;
+
+end;
+
+```
+
+### Running MrBayes
+
+```
+mb -i cp_2_genes.nexus
+```
+
+This will take some minutes, lets keep the program running while we talk about all the parameters used in this analysis
+
+> Change your flag to green if you are good to continue ![](img/green.jpeg)
+
+### Checking the output
+
+Let's take a peek of some of these files
+
+```
+head cp_2_genes.run1.p
+head cp_2_genes.run1.t
+```
+
 
 > Add the yellow flag to the right corner of your screen ![](img/yellow.jpeg)
 
@@ -48,7 +117,7 @@ iqtree -s ccsA-ndhD.fasta -m MF
 
 In the output we can see that `iqtree` perform multiple tests in all the possible models. The [iqtree website](http://www.iqtree.org/doc/) contains useful information for interpreting outputs.
 
-> Change your flag to green if you are good to continue ![](img/green.jpeg)
+
 
 ### Performing a Maximum Likelihood tree search
 
