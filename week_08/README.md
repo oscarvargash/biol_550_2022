@@ -127,7 +127,7 @@ Congrats you have performed your first Bayesian phylogenetic analysis,
 
 ## 1
 
-Do a Maximum Likelihood analysis of `cp_2_genes.nexus`, make sure every gene has a different partition. Compare the Maximum Likelihood tree against the Bayesian tree and answer the following questions:
+Do a Maximum Likelihood analysis of `cp_2_genes.fast` along with `cp_2_genes.model`, make sure every gene has a different partition. Compare the Maximum Likelihood tree against the Bayesian tree and answer the following questions:
 
 1. In terms of relationships among the tips. Do both trees have the same relationships? Give specific examples to support your answer.
 
