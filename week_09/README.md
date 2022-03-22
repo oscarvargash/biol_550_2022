@@ -104,7 +104,7 @@ You can open beast and run the file we just created. However, we will run this a
 
 1. Create an account in https://www.phylo.org/
 2. Create a new folder `Lecy`
-3. Upload the data to the subfolder `data`, you can add the label `two_cp_g`
+3. Upload the file `two_cp_g.xml` to the subfolder `data`, you can add the label `two_cp_g`
 4. Go to <kbd>Tasks</kbd> and crate a new task
 5. Add `beast cp` as the description, and select as the <kbd>Imput data</kbd> the `two_cp_g.xml` that you uploaded in the previous step.
 6. In the <kbd>Select tool</kbd> tab, select the `BEAST2 (current)`
