@@ -11,6 +11,8 @@ You can also write `terminal` in the search bar of the main manu located in the 
 
 ## Creating a script to get our files ready for analysis
 
+> Add the yellow flag to the right corner of your monitor ![](img/yellow.jpeg)
+
 One of the advantages of using the command line is that you can save your commands into a text file for a later re-execution. We will write a small script to get our computer ready for toaday's exercise:
 
 1. Create a new text file using nano:
@@ -59,9 +61,13 @@ cd Documents/week_09
 ls
 ```
 
+> Change your flag to green if you are good to continue ![](img/green.jpeg)
+
 ## Building a Chronogram
 
 ### Preparing an analysis file using Beauti
+
+> Add the yellow flag to the right corner of your monitor ![](img/yellow.jpeg)
 
 In order to perform a Bayesian analysis with Beast we need to create a `.xml` file that contains all the information necessary for the analysis. Open Beauti:
 
@@ -71,154 +77,70 @@ beauti
 
 You will see a window:
 
-![](img/beauti.png)
-
 1. Drag and drop both fasta files
-2. Unlink the substitition models by clink on <kbd>Unlink Subst. Models</kbd>
-3. Move to the <kbd>sites</kbd> tab
-4. Select <kbd>GTR</kbd> and <kbd>Gamma</kbd> for each partition
-5.
-
-
-
-
-
-
-
-
-Download and unzip data from this lab:
-
-```
-wget https://github.com/oscarvargash/biol_550_2022/raw/main/week_08/files/files.zip
-unzip files.zip
-```
-
-### Preparing the file for MrBayes
-
-Mr.Bayes only works with `nexus` files. Therefore, we need to comvert our `fasta` file into a a `nexus` one. We have done this before with `Aliview`:
-
-```
-aliview cp_2_genes.fasta
-cat cp_2_genes.model
-```
-
-In `aliview`:
-
-1. click on the `file` menu
-2. `save as` nexus (for Mr. bayes, second nexus option)
-3. `save`
-
-MrBayes operates like PAUP, it is a command line program that can operate interactively or with a script. We will use a script today. In order to do so, we need to add the commands for our analysis to the end of our fasta file:
-
-```
-xdg-open cp_2_genes.nexus
-xdg-open cp_2_genes.model
-```
-
-Once the file is open, paste the following text at the bottom of the `nexus` file after removing the block for codons
-
-```
-begin mrbayes;
-
-    [This block defines several different character sets that could be used in partitioning these data
-    and then defines and enforces a partition called favored.]
-
-    charset ccsA-ndhD = 1-1263;
-    charset ycf1and2 = 1264-3709;
-
-    partition favored = 2: ccsA-ndhD, ycf1and2;
-
-    set partition=favored;
-    lset app=(1,2) rates=gamma nst=6;
-    unlink revmat=(all) shape=(all) statefreq=(all);
-    prset applyto=(all) ratepr=variable;
-    
-    mcmc ngen=1000000 printfreq=1000 samplefreq=1000 relburnin=yes burninfrac=0.25							
-	diagnfreq=1000 diagnstat=maxstddev											
-	nchains=4 savebrlens=yes 
-	filename=cp_2_genes;
-	sump;
-	sumt;
-
-end;
-
-```
-
-### Running MrBayes
-
-```
-mb -i cp_2_genes.nexus
-```
-
-This will take some minutes, lets keep the program running while we talk about all the parameters used in this analysis. Once the analysis has finished type `quit` to exit MrBayes
+![](img/beauti.png)
+2. Unlink the substitition models by clicking on <kbd>Unlink Subst. Models</kbd> while having both regions being selected
+![](img/partition.png)
+3. Move to the <kbd>Taxa</kbd> tab and create a taxon set by clicking on <kbd>+</kbd>. Iclude all the taxa with the exception of Barringtonia. Make this group mononophyletic and add the age of 46. This is the node that will be calibrated to add time to the phylogeny.
+![](img/taxa.png)
+4. Move to the <kbd>Sites</kbd> tab
+![](img/model.png)
+5. Select <kbd>GTR</kbd> and <kbd>Gamma</kbd> for each partition
+6. Move to the <kbd>Clocks</kbd> tab and select a <kbd>Uncorrelated relaxed clock</kbd>, this models assumes that your tree branches are heterogeneous, a common pattern in most topologies.
+![](img/clock.png)
+7. Move to the <kbd>Trees</kbd> tab and select a <kbd>Speciation: Yule model</kbd>, this is a simple model of speciation that assumens no significant chages of speciation rate along your tree.
+8. Move to the <kbd>Piors</kbd> tab, click on <kbd>* Using Tree Prior</kbd> in front of `tmrca(untitled0)`; this is the prior for the age of the most recent common ancestor for the taxon set we created in step 3. Because this age was inferred from a another publication, we will use a <kbd>Normal</kbd> distribution with a mean of 46 and standart deviation of 5, which roughly correspond to the same interval found in the paper we are using for this calibration.
+9. Go to the <kbd>MCMC</kbd> tab and change the file name stem to: `two_cp_g`. You can see that in this tab you can change all parameters for the MCMC chain.
+![](img/prior.png)
+10. File go to <kbd>file</kbd> and select <kbd>Generate Beast File</kbd>. Save your file in the week_09 folder.
 
 > Change your flag to green if you are good to continue ![](img/green.jpeg)
 
-### Checking the output
+### Runing beast
 
-> Add the yellow flag to the right corner of your screen ![](img/yellow.jpeg)
+> Add the yellow flag to the right corner of your monitor ![](img/yellow.jpeg)
 
-Let's take a peek of some of these files
+You can open beast and run the file we just created. However, we will run this analysis in the CIPRES portal. This is an excelent and free resource to access high computational power for large datasets.
 
-```
-head cp_2_genes.run1.p
-head cp_2_genes.run1.t
-```
-
-What are those files?
-
-We can take a more detailed look at the `*.p` file:
-
-```
-tracer
-```
-
-Drag and drop the one of the `*.p` files on the  `tracer` application. Summary statistics are shown for every parameter calculated.
-
-Now drop the other `*.p` file. If both chains converged they should presetn similar likelihood values.
-
-If everything looks good, now you know that you can trust the final result:
-
-```
-figtree cp_2_genes.con.tre
-```
-
-You will need to turn on the `node labels` and select the appropiate statistic.
-
-Congrats you have performed your first Bayesian phylogenetic analysis,
+1. Create an account in https://www.phylo.org/
+2. Create a new folder `Lecy`
+3. Upload the data to the subfolder `data`, you can add the label `two_cp_g`
+4. Go to <kbd>Tasks</kbd> and crate a new task
+5. Add `beast cp` as the description, and select as the <kbd>Imput data</kbd> the `two_cp_g.xml` that you uploaded in the previous step.
+6. In the <kbd>Select tool</kbd> tab, select the `BEAST2 (current)`
+7. Click on parameters and change the maximum numbers of hours to run to `12`
+8. Finally click <kbd>Save and run</kbd> to run the task 
+9. You can check the status of the job in the <kbd>Tasks</kbd>
+10. Download results when analysis has finished
 
 > Change your flag to green if you are good to continue ![](img/green.jpeg)
+
+### Calculating a chronogram
+
+> Add the yellow flag to the right corner of your monitor ![](img/yellow.jpeg)
+
+To avoid the wait, we will dowload the results from a analysis previously run:
+
+```
+wget https://github.com/oscarvargash/biol_550_2022/raw/main/week_09/files/files2.zip
+unzip files2.zip
+```
+
+
+
+> Change your flag to green if you are good to continue ![](img/green.jpeg)
+
+
+
+
+
 
 
 ### Exercises
 
 ## 1
 
-Do a Maximum Likelihood analysis of `cp_2_genes.fasta` along with `cp_2_genes.model`, make sure every gene has a different partition. Compare the Maximum Likelihood tree against the Bayesian tree and answer the following questions:
 
-1. In terms of relationships among the tips. Do both trees have the same relationships? Give specific examples to support your answer.
-
-2. In terms of branch lenghts. Do both trees show similar branch lengths? Give specific examples to support your answer.
-
-3. In terms of support. Do both trees present similar support values? Give specific examples to support your answer and remember that roughly 70% bootstrap corerspond to 0.95 posterior probability.
 
 Submit your answers to CANVAS
 
-## 2
-
-Create a loop that that prints the first line for every DNA alignment in used in week's 7 exercise (iqtree tutorial). The output of the printing should look like this:
-
-```
->Barringtonia_edulis
->Barringtonia_edulis
->Barringtonia_edulis
->Barringtonia_edulis
->Barringtonia_edulis
->Barringtonia_edulis
->Barringtonia_edulis
->Barringtonia_edulis
->Barringtonia_edulis
->Barringtonia_edulis
-```
-
-Submit your loop to CANVAS
