@@ -119,7 +119,7 @@ You can open beast and run the file we just created. However, we will run this a
 
 > Add the yellow flag to the right corner of your monitor ![](img/yellow.jpeg)
 
-To avoid the wait, we will dowload the results from a analysis previously run:
+To avoid the wait, we will dowload the results from an analysis previously ran:
 
 ```
 wget https://github.com/oscarvargash/biol_550_2022/raw/main/week_09/files/files2.zip
