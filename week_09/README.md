@@ -75,8 +75,8 @@ You will see a window:
 
 1. Drag and drop both fasta files
 2. Unlink the substitition models by clink on <kbd>Unlink Subst. Models</kbd>
-3. Move to the <kbd>sites<kbd> tab
-4. Select <kbd>GTR<kbd> and <kbd>Gamma<kbd> for each partition
+3. Move to the <kbd>sites</kbd> tab
+4. Select <kbd>GTR</kbd> and <kbd>Gamma</kbd> for each partition
 5.
 
 
