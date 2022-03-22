@@ -26,7 +26,7 @@ The `.sh` suffix indicates that this script is to be excuted on shell (which is 
 cd Documents
 mkdir week_09
 cd week_09
-wget https://github.com/oscarvargash/biol_550_2022/raw/main/week_08/files/files.zip
+wget https://github.com/oscarvargash/biol_550_2022/raw/main/week_09/files/files.zip
 unzip files.zip
 
 ```
@@ -43,8 +43,17 @@ Finally press:
 
 4. Execute the script
 ```
-./ week9.sh
+./week9.sh
 ```
+
+
+
+
+
+
+
+
+
 
 
 Download and unzip data from this lab:
