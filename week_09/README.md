@@ -1,4 +1,4 @@
-# Week eight: building trees MrBayes
+# Week nine: creating scripts; calibrating a phylogeny
 
 > Add the yellow flag to the right corner of your screen ![](img/yellow.jpeg)
 
@@ -9,15 +9,43 @@ Once logged in the Linux machine, look for the Terminal, it is an icon that cont
 
 You can also write `terminal` in the search bar of the main manu located in the left bottom of the operating system.
 
-### Download data
+### Creating a script to get our files ready for analysis
 
-Make a folder for this week:
+One of the advantages of using the command line is that you can save your commands into a text file for a later re-execution. We will write a small script to get our computer ready for toaday's exercise:
+
+1. Create a new text file using nano:
+```
+nano week9.sh
+```
+The `.sh` suffix indicates that this script is to be excuted on shell (which is the terminal of Linux)
+
+2. Add ALL the commands to be used in your script, copy and paste the text below into nano:
 
 ```
+# quick sript to get ready for the lab of week 9
 cd Documents
-mkdir week_08
-cd week_08
+mkdir week_09
+cd week_09
+wget https://github.com/oscarvargash/biol_550_2022/raw/main/week_08/files/files.zip
+unzip files.zip
+
 ```
+Notice how there is an "enter" at the end of the sript, this is to ensure the last line is executed by the shell. Also notice that lines that start with `#` are not interpreted as commands, these are comments that you can add to your script to expmain it.
+
+3. Save the file while closing nano:
+<kbd>control</kbd> + <kbd>x</kbd>
+
+Then answer:
+<kbd>y</kbd>
+
+Finally press:
+<kbd>return</kbd>
+
+4. Execute the script
+```
+./ week9.sh
+```
+
 
 Download and unzip data from this lab:
 

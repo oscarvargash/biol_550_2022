@@ -38,7 +38,7 @@ Every week in lab you will connect to a Linux virtual machine. There are two way
 
 [W-8](https://github.com/oscarvargash/biol_550_2022/tree/main/week_08) MrBayes, tracer
 
-[W-9] BeauTi and the BEAST, chronogram inference
+[W-9](https://github.com/oscarvargash/biol_550_2022/tree/main/week_09) basic shell scripts, BeauTi and the BEAST, chronogram inference
 
 [W-10] No class (Cesar Chaves holiday)
 
