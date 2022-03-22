@@ -9,7 +9,7 @@ Once logged in the Linux machine, look for the Terminal, it is an icon that cont
 
 You can also write `terminal` in the search bar of the main manu located in the left bottom of the operating system.
 
-### Creating a script to get our files ready for analysis
+## Creating a script to get our files ready for analysis
 
 One of the advantages of using the command line is that you can save your commands into a text file for a later re-execution. We will write a small script to get our computer ready for toaday's exercise:
 
@@ -41,11 +41,37 @@ Then answer:
 Finally press:
 <kbd>return</kbd>
 
-4. Execute the script
+4. Make the script excutable. When you list the details of your files `ls -l` you will see that your file is not executable yet. You can change this:
+
+```
+chmod +x week9.sh
+```
+
+5. Execute your script:
 ```
 ./week9.sh
 ```
 
+Congrats!! You have created and executed an script. You can check that eveything is fine by navigating to week 9:
+
+```
+cd Documents/week_09
+ls
+```
+
+## Building a Chronogram
+
+### Preparing an analysis file using Beauti
+
+In order to perform a Bayesian analysis with Beast we need to create a `.xml` file that contains all the information necessary for the analysis. Open Beauti:
+
+```
+beauti
+```
+
+You will see a window in which now you can drag both fasta files downloaded previously
+
+![](img/beauti.png)
 
 
 
