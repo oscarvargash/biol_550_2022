@@ -69,11 +69,15 @@ In order to perform a Bayesian analysis with Beast we need to create a `.xml` fi
 beauti
 ```
 
-You will see a window in which now you can drag both fasta files downloaded previously
+You will see a window:
 
 ![](img/beauti.png)
 
-
+1. Drag and drop both fasta files
+2. Unlink the substitition models by clink on <kbd>Unlink Subst. Models</kbd>
+3. Move to the <kbd>sites<kbd> tab
+4. Select <kbd>GTR<kbd> and <kbd>Gamma<kbd> for each partition
+5.
 
 
 
