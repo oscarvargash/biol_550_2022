@@ -1,10 +1,10 @@
 # Computational laboratory for BIOL 550 Systematics
 
 > **NOTE** 
-> This was developed/organized for a class at Humboldt State University for the spring of 2022. 
+> This was developed for a class at Humboldt State University for the spring of 2022. 
 > Some of the material has beed modified from another workshop repository that I co-authored with Merly Escalona at UCSC [Intro to computational tools at UCSC](https://github.com/merlyescalona/ucsc-eeb-intro2comptools) 
 
-The aim of the lab is to provide the skills necessary to analyze data from next-generation sequencing using phylogenetic methods. Students will first learn how to use the command line, then will learn how to use an array of phylgenetic software, and finally will gain some skills in python and R coding.
+The aim of the lab is to provide the skills necessary to analyze data from next-generation sequencing using phylogenetic methods. The analyses are designed so they can be scalable to big data. Students will first learn how to use the command line, then will learn how to use an array of phylogenetic software, and finally will gain some skills in R and python coding.
 
 These tutorials are hands-on and were designed to be followed on a Linux machine with all the software pre-installed. However, a list of software can be found at the bottom of this page for your reference.
 
@@ -42,7 +42,7 @@ Every week in lab you will connect to a Linux virtual machine. There are two way
 
 [W-10] No class (Cesar Chaves holiday)
 
-[W-11] Project dataset submission, Tree visualization and manipulation in R, character tracing in R
+[W-11](https://github.com/oscarvargash/biol_550_2022/tree/main/week_11) Project dataset submission, Tree visualization and manipulation in R, character tracing in R
 
 [W-12] Introduction to python
 
@@ -52,6 +52,7 @@ Every week in lab you will connect to a Linux virtual machine. There are two way
 
 [W-15] Final project presentations
 
+## [Common questions about data processing](https://github.com/oscarvargash/biol_550_2022/tree/main/Q_&_A)
 
 # Instructor:
 
