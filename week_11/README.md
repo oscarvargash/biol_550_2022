@@ -15,6 +15,20 @@ We will use R and R-studio (which is a "facade" for R) to perform comparative ph
 
 > Add the yellow flag to the right corner of your monitor ![](img/yellow.jpeg)
 
+
+First crate a folder and download the data necessary for the exercise:
+
+```
+cd Documents
+mkdir week_11
+cd week_11
+wget https://github.com/oscarvargash/biol_550_2022/raw/main/week_11/files/files.zip
+unzip files.zip
+```
+
+
+
+
 One of the advantages of using the terminal is that you can save commands into a text file for re-execution later (saving scripts also helps with keeping a record of your methods for writing these into your dissertation and/or scientific paper). We will write a small script to get our computer ready for today's exercise:
 
 1. Create a new text file using nano in your home directory:
