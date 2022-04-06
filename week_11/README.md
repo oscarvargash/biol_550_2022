@@ -1,4 +1,4 @@
-# Week eleven: using R to manipulate trees and perform character mapping and association tests
+# Week eleven: using R to perform stochastic character mapping
 
 To start this tutorial you need to be logged in your **Windows** machine in the classroom.
 
@@ -19,11 +19,9 @@ First crate a folder and download the data necessary for the exercise:
 4. Transfer `files.zip` to `week_11`
 5. Secondary click on `files.zip` to unzip the files on current folder (avoid creating a new folder inside week_11)
 
-Now that we have the files necessary we can open Rstudio by simply typing Rstudio in the search bar of the OS.
+Now that we have the files necessary we can open Rstudio by simply typing `Rstudio` in the search bar of the OS.
 
-![](img/search.png)
-
-Now, we need to create a new R script, this will save all the code we write, so we can easily execute the code later. Go to `file` and then click on `new file` and `new script`
+Now, we need to create a new R script, this will save all the code we write, so we can easily execute the code later. Go to `file` and then click on `New File` and `R script`
 
 ![](img/script.png)
 
@@ -79,7 +77,7 @@ charaters <- read.csv("costus_pollination_v2.csv", row.names = 1)
 You can click on the item `characters` to see what we have just imported. We only need the pollination information. So we will select this information as a matrix for our analysis:
 
 ```
-poll <- as.matrix(poll)[,2]
+poll <- as.matrix(charaters)[,2]
 ```
 
 Now that we have the tree and the character states, we can simulate stochastic character maps on the phylogenetic tree. Then we will count the number of transitions and get a summary of the analysis
@@ -90,7 +88,7 @@ transitions <- as.data.frame(countSimmap(costus_trees))
 summary(costus_trees)
 ```
 
-Now we can organize our data on transitions so we can create comparative histogram
+Now we can organize our data on transitions so we can create a comparative histogram
 
 ```
 bee_2_humm <- as.data.frame(transitions$Tr.B.H)
