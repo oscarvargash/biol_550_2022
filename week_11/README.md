@@ -2,6 +2,7 @@
 
 To start this tutorial you need to be logged in your **Windows** machine in the classroom.
 
+Alternatively you can log to the a virtual windows machine using: https://vlab.humboldt.edu
 
 ## Hyper-brief intro to R
 
