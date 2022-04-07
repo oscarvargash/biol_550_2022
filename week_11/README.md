@@ -86,7 +86,7 @@ Now that we have the tree and the character states, we can simulate stochastic c
 ```
 costus_trees <- make.simmap(tree,poll,model="ARD",nsim=1000)
 transitions <- as.data.frame(countSimmap(costus_trees)) 
-summary(costus_trees)
+obj <- summary(costus_trees)
 ```
 
 Now we can organize our data on transitions so we can create a comparative histogram
