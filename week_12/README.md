@@ -9,7 +9,7 @@ You can also write `terminal` in the search bar of the main manu located in the 
 
 ## Hyper-brief intro to python
 
-Python is a coding language useful for writing medium-sized scientific projects with tons of data involved. Beacuse python has many advantages for manipulating strings (text variables like DNA sequences), it is a useful programming language for phylogentics and DNA-related data analysis.
+Python is a coding language useful for writing medium-sized scientific projects with tons of data involved. Because python has many advantages for manipulating strings (text variables like DNA sequences), it is a useful programming language for phylogentics and DNA-related data analysis.
 
 
 Like R, the engine that translates and runs Python is called the ***Python Interpreter*** and there are two ways to use it: 
@@ -46,7 +46,7 @@ Now we are in the Python interpreter, you'll notice that there's this **`>>>`**.
 Python 3.6.9 (default, Mar 15 2022, 13:55:28) 
 [GCC 8.4.0] on linux
 Type "help", "copyright", "credits" or "license" for more information.
->>> exit
+>>>
 ```
 
 Let's start with the basics, enter `2 + 2` at the prompt to have Python do some simple math.
@@ -110,7 +110,7 @@ print(change)
 
 > Change your flag to yellow ![](img/yellow.jpeg)
 
-A string is a singular piece of data stored as a single object. In bioinformatics, DNA sequences are an example of strings. Notice that strings have to be indide quotes
+A string is a singular piece of data stored as a single object. In bioinformatics, DNA sequences are an example of strings. Notice that strings have to be inside quotes
 
 ```
 seq = 'atgctgctgtgtcg'
