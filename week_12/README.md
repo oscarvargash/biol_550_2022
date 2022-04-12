@@ -28,7 +28,7 @@ wget https://github.com/oscarvargash/biol_550_2022/raw/main/week_12/files/files.
 unzip files.zip
 ```
 
-### Opeining python 
+### Using python interactively
 
 There are two versions of Python, `python2` and `python3`. Because `python2` is being phased out we will learn `python3`. Differences between versions are minimal. 
 
@@ -54,9 +54,9 @@ Let's start with the basics, enter `2 + 2` at the prompt to have Python do some 
 ```
 2 + 2
 ```
-### Types of variables in python
+#### Types of variables in python
 
-#### Integers
+##### Integers
 
 > Change your flag to yellow ![](img/yellow.jpeg)
 
@@ -73,7 +73,7 @@ We can check that bases was assigned by:
 bases / 4
 ```
 
-## Floats
+##### Floats
 
 Float are numbers with decimals, while it seems silly to have two types of data, integers and float have different properties (these differences were more important in python2). In any case it is important to keep this in mind in case you get error messages associated with integers and floats.
 
@@ -96,7 +96,7 @@ change
 type(change)
 ```
 
-## Functions
+##### Functions
 
 We have been using `type()` to check the types of variables. We can also use the function `print()` to get the value of the variable:
 
@@ -106,7 +106,7 @@ print(change)
 
 > Change your flag to green if you are good to continue ![](img/green.jpeg)
 
-### Strings
+##### Strings
 
 > Change your flag to yellow ![](img/yellow.jpeg)
 
@@ -118,7 +118,7 @@ print(seq)
 type(seq)
 ```
 
-### Operations on strings
+##### Operations on strings
 
 We cannot perform mathematical operations with strings, even if they look like numbers. Some operators will be the same, but given that they data type is different, their function is different too. For example, to concatenate 2 strings (in our case sequences) we will use the `+` operator:
 
@@ -127,11 +127,7 @@ dobleseq=seq + seq
 print(doubleseq)
 ```
 
-> Change your flag to green if you are good to continue ![](img/green.jpeg)
-
-### Lists
-
-> Change your flag to yellow ![](img/yellow.jpeg)
+##### Lists
 
 Lists are useful to store ordered or unordered items. Notice that brackets surround the list, every item is separated by a comma, and non-numeric items are quoted
 
@@ -162,8 +158,11 @@ To exit `python` just type:
 ```
 exit()
 ```
+> Change your flag to green if you are good to continue ![](img/green.jpeg)
 
-## Basic scripting
+### Basic scripting
+
+> Change your flag to yellow ![](img/yellow.jpeg)
 
 One of the advantages of using python is that python can interact easily with bash.
 
@@ -174,8 +173,6 @@ touch fasta_descriptor.py
 ```
 
 Now, le's open the file in a text editor, by navigating to it and opening it with the native text editor. It is nice to put the windows next to each other:
-
-IMAGE
 
 Just like in R, there are packages available in `python` for al sorts of operations. Packages are called using `import`
 
@@ -194,6 +191,9 @@ fasta_files = (glob.glob)('*.fasta')
 print(fasta_files)
 ```
 
+![](img/python.png)
+
+
 Save the file, and execute in the terminal:
 
 ```
@@ -202,7 +202,7 @@ python3 fasta_descriptor.py
 
 Congratulations you have created your first `python3` script!
 
-
+> Change your flag to green if you are good to continue ![](img/green.jpeg)
 
 
 
