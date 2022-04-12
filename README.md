@@ -44,11 +44,11 @@ Every week in lab you will connect to a Linux virtual machine. There are two way
 
 [W-11](https://github.com/oscarvargash/biol_550_2022/tree/main/week_11) Project dataset submission, Tree visualization and manipulation in R, character tracing in R
 
-[W-12] Introduction to python
+[W-12](https://github.com/oscarvargash/biol_550_2022/tree/main/week_12) Introduction to python
 
 [W-13] Loops in python
 
-[W-14] Phylo-hub
+[W-14] Phylo-hub: work with your data in the lab (assistance is mandatory)
 
 [W-15] Final project presentations
 
