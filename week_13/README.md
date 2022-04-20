@@ -79,10 +79,10 @@ And add this to the end of the script to test how to count samples in each fasta
 counter = 0     
 for seq_record in SeqIO.parse(file, "fasta"):
 	counter+=1 								
-print(file)						
-print(counter)
-seq_len = len(seq_record)		
-print(seq_len)				
+	print(file)						
+	print(counter)
+	seq_len = len(seq_record)		
+	print(seq_len)				
 ```
 
 As you can see, this worked for the last `file` in the loop. At lest for now we now that we can count the number of sequences and sites in each file.
@@ -91,13 +91,13 @@ We can now insert this code in the loop:
 
 ```
 for file in fasta_files:
-    counter = 0
-    for seq_record in SeqIO.parse(file, "fasta"):
-	    counter+=1
-    print(file)
-    print(counter)
-    seq_len = len(seq_record)
-    print(seq_len)
+	counter = 0
+	for seq_record in SeqIO.parse(file, "fasta"):
+	  counter+=1
+	print(file)
+	print(counter)
+	seq_len = len(seq_record)
+	print(seq_len)
 ```
 
 We see that our answer is nicely printed to the terminal, a better way of storing these results would be a table that we can save as a file. The module `pandas` is used for this purpose.
