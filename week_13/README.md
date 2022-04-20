@@ -76,12 +76,12 @@ from Bio import SeqIO
 And add this to the end of the script to test how to count samples in each fasta file and how many sites are present in the aligment, you can remove and/or "comment out" print lines to avoid cluttering your script.
 
 ```
-counter = 0      						#start a count variable with 0
-for seq_record in SeqIO.parse(file, "fasta"):   #itemize every seq in fasta
-	counter+=1 									#add 1 count to counter
+counter = 0     
+for seq_record in SeqIO.parse(file, "fasta"):
+	counter+=1 								
 print(file)						
 print(counter)
-seq_len = len(seq_record)			#number of sites in last loop seq
+seq_len = len(seq_record)		
 print(seq_len)				
 ```
 
