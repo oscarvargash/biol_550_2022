@@ -187,8 +187,14 @@ Let's copy and paste the following text into our script `fasta_descriptor.py`:
 import glob
 
 fasta_files = (glob.glob)('*.fasta')
-
 print(fasta_files)
+
+
+for file in fasta_files"
+	print(file)
+	char_len = len(file)
+	print(char_len)
+
 ```
 
 ![](img/python.png)
