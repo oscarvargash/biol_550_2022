@@ -128,7 +128,7 @@ Congrats you hafe created a useful python script!
 Do you have any ideas about how to make this script better?
 
 <details>
-  <summary>If you for any reason you need the whole script, please click here</summary>
+  <summary>If for any reason you need the whole script, please click here</summary>
   
 ```
 #!/usr/bin/env python3
