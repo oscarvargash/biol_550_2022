@@ -117,7 +117,13 @@ stats = pd.DataFrame(columns=c)
 print(stats.head)
 ```
 
-We can see now that our results are nicely organized. Finally we just need to save it.
+Now we can add a line in our loop that will populate the dataframe created before the loop. Make sure you add a tab so the code of line so the code is executed in side the loop.
+
+```
+stats = stats.append({"gene":file,"sequences":counter,"length":seq_len}, ignore_index=True)
+```
+
+When the code is executed, we can see that our results are nicely organized. Finally we just need to save it.
 
 ```
 stats.to_csv(path_or_buf="gene_stats.csv")
@@ -128,7 +134,7 @@ Congrats you hafe created a useful python script!
 Do you have any ideas about how to make this script better?
 
 <details>
-  <summary>If for any reason you need the whole script, please click here</summary>
+  <summary>If for any reason you need see the final script, please click here</summary>
   
 ```
 #!/usr/bin/env python3
