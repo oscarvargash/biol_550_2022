@@ -76,28 +76,32 @@ from Bio import SeqIO
 And add this to the end of the script to test how to count samples in each fasta file and how many sites are present in the aligment, you can remove and/or "comment out" print lines to avoid cluttering your script.
 
 ```
-counter = 0     
-for seq_record in SeqIO.parse(file, "fasta"):
-	counter+=1 								
-	print(file)						
-	print(counter)
-	seq_len = len(seq_record)		
-	print(seq_len)				
+aln = SeqIO.parse("cluster859_supercontig.fasta", "fasta")
+
+counter = 0
+for seq_record in aln:
+    print(seq_record)
+    counter += 1
+    print(counter)
+    seq_len = len(seq_record)
+    print(seq_len)			
 ```
 
-As you can see, this worked for the last `file` in the loop. At lest for now we now that we can count the number of sequences and sites in each file.
+As you can see, this worked for one single file.
 
 We can now insert this code in the loop:
 
 ```
 for file in fasta_files:
-	counter = 0
-	for seq_record in SeqIO.parse(file, "fasta"):
-	  counter+=1
-	print(file)
-	print(counter)
-	seq_len = len(seq_record)
-	print(seq_len)
+    print(file)
+    aln = SeqIO.parse(file, "fasta")   #import alignment
+    #print(aln)
+    counter = 0                        # create a count from 0
+    for seq_record in aln:             # iterate over every seq
+        counter +=1
+    print(counter)
+    seq_len = len(seq_record)         # calculate length
+    print(seq_len)     
 ```
 
 We see that our answer is nicely printed to the terminal, a better way of storing these results would be a table that we can save as a file. The module `pandas` is used for this purpose.
@@ -112,7 +116,7 @@ Now we can add, before the loop, an empty dataframe where we will store the data
 
 ```
 print("creating dataframe")
-c = ["gene","sample","length"]
+c = ["gene","sequences","length"]
 stats = pd.DataFrame(columns=c)
 print(stats.head)
 ```
@@ -147,31 +151,30 @@ from Bio import SeqIO
 import pandas as pd
 
 
-# Create a list of fasta files found in folder
 fasta_files = (glob.glob)('*.fasta')
+#print(fasta_files)
 
-# Create dataframe
 print("creating dataframe")
 c = ["gene","sequences","length"]
 stats = pd.DataFrame(columns=c)
-print(stats.head)
+#print(stats)
 
-
-#Iterate over fasta files 
+# iterate over every fasta file and count sequences and measure lenght
 
 for file in fasta_files:
-    counter = 0
-    for seq_record in SeqIO.parse(file, "fasta"):
-	    counter+=1
     print(file)
+    aln = SeqIO.parse(file, "fasta")   #import alignment
+    #print(aln)
+    counter = 0                        # create a count from 0
+    for seq_record in aln:             # iterate over every seq
+        counter +=1
     print(counter)
-    seq_len = len(seq_record)
+    seq_len = len(seq_record)         # calculate length
     print(seq_len)
-
-    stats = stats.append({"gene":file,"sequences":counter,"length":seq_len}, ignore_index=True)
+    string_parts = file.split("_")     
+    stats = stats.append({"gene":string_parts[0],"sequences":counter,"length":seq_len}, ignore_index=True)
 
 print(stats)
-
 
 stats.to_csv(path_or_buf="gene_stats.csv")
 
